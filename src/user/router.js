@@ -9,7 +9,6 @@ import LoginController from './login/controller';
 import RegisterController from './register/controller';
 import ResetController from './reset/controller';
 import ActivitiesController from '../common/pages/activities/controller';
-import StatisticsController from './statistics/controller';
 
 App.user = {};
 
@@ -17,7 +16,6 @@ const Router = Marionette.AppRouter.extend({
   routes: {
     'user/login(/)': LoginController.show,
     'user/activities(/)': ActivitiesController.show,
-    'user/statistics(/)': StatisticsController.show,
     'user/register(/)': RegisterController.show,
     'user/reset(/)': ResetController.show,
     'user/*path': () => { radio.trigger('app:404:show'); },
