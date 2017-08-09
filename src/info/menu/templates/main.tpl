@@ -54,12 +54,6 @@
   </a>
 </li>
 <li class="table-view-cell">
-  <a href="#info/brc-approved" class="navigate-right">
-    <span class="media-object pull-left icon icon-thumbs-up"></span>
-    BRC Approved
-  </a>
-</li>
-<li class="table-view-cell">
   <a href="#info/credits" class="navigate-right">
     <span class="media-object pull-left icon icon-heart"></span>
     Credits
