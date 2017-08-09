@@ -353,6 +353,10 @@ body.ios header #subheader {
   &:not(:last-child) {
     border-bottom: 1px solid $color-gray;
   }
+
+  ul {
+    padding-left: 15px;
+  }
 }
 
 li h3 {
