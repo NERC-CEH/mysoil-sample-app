@@ -8,13 +8,8 @@
 <h1 class="title">Edit</h1>
 
 
-<%  if(obj.group_title || obj.training) { %>
+<%  if(obj.training) { %>
 <div id="subheader">
-  <% if (obj.group_title) { %>
-  <div class="activity"></div>
-  <% } %>
-  <% if (obj.training) { %>
   <div class="training"></div>
-  <% } %>
 </div>
 <% } %>
