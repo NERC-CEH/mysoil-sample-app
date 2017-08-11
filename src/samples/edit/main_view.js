@@ -93,6 +93,8 @@ export default Marionette.View.extend({
       stage: occ.get('stage') && StringHelp.limit(occ.get('stage')),
       identifiers: occ.get('identifiers') && StringHelp.limit(occ.get('identifiers')),
       comment: occ.get('comment') && StringHelp.limit(occ.get('comment')),
+      group_title: group ? group.title : null,
+      group,
       locks: attrLocks,
     };
   },
