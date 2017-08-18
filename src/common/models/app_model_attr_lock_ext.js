@@ -116,25 +116,11 @@ export default {
           // parse stringified date
           sample.set('date', new Date(val));
           break;
-        case 'number':
-          occurrence = sample.getOccurrence();
-          occurrence.set('number', val);
+        case 'country':
+          sample.set('country', val);
           break;
-        case 'number-ranges':
-          occurrence = sample.getOccurrence();
-          occurrence.set('number-ranges', val);
-          break;
-        case 'stage':
-          occurrence = sample.getOccurrence();
-          occurrence.set('stage', val);
-          break;
-        case 'identifiers':
-          model = sample;
-          if (survey === 'general') {
-            occurrence = sample.getOccurrence();
-            model = occurrence;
-          }
-          model.set('identifiers', val);
+        case 'reference':
+          sample.set('reference', val);
           break;
         case 'comment':
           model = sample;

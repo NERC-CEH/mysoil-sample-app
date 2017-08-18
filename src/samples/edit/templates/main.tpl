@@ -40,19 +40,27 @@
     </a>
   </li>
   <li class="table-view-cell">
+    <a href="#samples/<%- obj.id %>/edit/country" id="country-button"
+       class="<%- obj.locks['country'] ? 'lock' : 'navigate-right' %>">
+      <span class="media-object pull-left icon icon-country"></span>
+      <span class="media-object pull-right descript"><%- obj.country %></span>
+      Country
+    </a>
+  </li>
+  <li class="table-view-cell">
     <a href="#samples/<%- obj.id %>/edit/number" id="number-button"
        class="<%- obj.locks['number'] ? 'lock' : 'navigate-right' %>">
       <span class="media-object pull-left icon icon-number"></span>
       <span class="media-object pull-right descript"><%- obj.number %></span>
-      Number
+      Sample number
     </a>
   </li>
   <li class="table-view-cell">
-    <a href="#samples/<%- obj.id %>/edit/stage" id="stage-button"
-       class="<%- obj.locks['stage'] ? 'lock' : 'navigate-right' %>">
-      <span class="media-object pull-left icon icon-stage"></span>
-      <span class="media-object pull-right descript"><%- obj.stage %></span>
-      Stage
+    <a href="#samples/<%- obj.id %>/edit/reference" id="reference-button"
+       class="<%- obj.locks['number'] ? 'lock' : 'navigate-right' %>">
+      <span class="media-object pull-left icon icon-reference"></span>
+      <span class="media-object pull-right descript"><%- obj.reference %></span>
+      Your reference
     </a>
   </li>
   <li class="table-view-cell">
@@ -61,14 +69,6 @@
       <span class="media-object pull-left icon icon-comment"></span>
       <span class="media-object pull-right descript"><%= obj.comment %></span>
       Comment
-    </a>
-  </li>
-  <li class="table-view-cell">
-    <a href="#samples/<%- obj.id %>/edit/identifiers" id="identifiers-button"
-       class="<%- obj.locks['identifiers'] ? 'lock' : 'navigate-right' %>">
-      <span class="media-object pull-left icon icon-user-plus"></span>
-      <span class="media-object pull-right descript"><%= obj.identifiers %></span>
-      Identifiers
     </a>
   </li>
   <% if (obj.group_title) { %>

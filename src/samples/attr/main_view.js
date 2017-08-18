@@ -49,18 +49,25 @@ export default Marionette.View.extend({
           max: new Date(),
         });
         break;
-      case 'number':
-        attrView = new NumberAttrView({
-          config: surveyConfig.occurrence['number-ranges'],
-          defaultNumber: occ.get('number'),
-          default: occ.get('number-ranges'),
+
+        case 'country':
+        attrView = new RadioInputView({
+          config: surveyConfig.sample['country'],
+          default: sample.get('country'),
         });
         break;
 
-      case 'stage':
-        attrView = new RadioInputView({
-          config: surveyConfig.occurrence.stage,
-          default: occ.get('stage'),
+      case 'number':
+        attrView = new InputView({
+          config: surveyConfig.sample['number'],
+          default: sample.get('number'),
+        });
+        break;
+
+      case 'reference':
+        attrView = new InputView({
+          config: surveyConfig.sample['reference'],
+          default: sample.get('reference'),
         });
         break;
 
@@ -68,13 +75,6 @@ export default Marionette.View.extend({
         attrView = new TextareaView({
           config: surveyConfig.sample.comment,
           default: occ.get('comment'),
-        });
-        break;
-
-      case 'identifiers':
-        attrView = new InputView({
-          config: surveyConfig.occurrence.identifiers,
-          default: occ.get('identifiers'),
         });
         break;
 

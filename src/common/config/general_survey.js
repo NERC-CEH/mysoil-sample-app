@@ -45,6 +45,26 @@ const config = {
 
     device_version: { id: 759 },
 
+    country: {
+      label: 'Please pick the country where you are working.',
+      id: 21,
+      values: {
+        GB: 139,
+        FR: 140,
+        DE: 141,
+      },
+    },
+
+    number: {
+      label: 'Enter sample number corresponding to that on box.',
+      id: 23,
+    },
+
+    reference: {
+      label: 'Add your own reference, if you wish, to help identify the sample',
+      id: 24,
+    },
+
     date: {
       values(date) {
         return DateHelp.print(date);
@@ -86,20 +106,6 @@ const config = {
         '101-500': 669,
         '500+': 670,
       },
-    },
-    stage: {
-      id: 106,
-      label: 'Please pick the life stage.',
-      default: 'Not Recorded',
-      values: {
-        Adult: 1950,
-        'Pre-adult': 1951,
-        Other: 1952,
-      },
-    },
-    identifiers: {
-      id: 18,
-      label: 'If anyone helped with the identification please enter their name here.',
     },
   },
 

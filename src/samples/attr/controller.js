@@ -122,31 +122,21 @@ const API = {
           sample.set('date', newVal);
         }
         break;
-      case 'number':
-        currentVal = occ.get('number');
-
-        // todo: validate before setting up
-        if (values.number) {
-          // specific number
-          newVal = values.number;
-          occ.set('number', newVal);
-          occ.unset('number-ranges');
-        } else {
-          // number ranges
-          attr = 'number-ranges'; // eslint-disable-line
-          newVal = values[attr];
-          occ.set('number-ranges', newVal);
-          occ.unset('number');
-        }
-        break;
-      case 'stage':
-      case 'identifiers':
       case 'comment':
         currentVal = occ.get(attr);
         newVal = values[attr];
 
         // todo:validate before setting up
         occ.set(attr, values[attr]);
+        break;
+      case 'country':
+      case 'number':
+      case 'reference':
+        currentVal = sample.get(attr);
+        newVal = values[attr];
+
+        // todo:validate before setting up
+        sample.set(attr, values[attr]);
         break;
       default:
     }
