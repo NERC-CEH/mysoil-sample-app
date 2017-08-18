@@ -67,7 +67,7 @@ const API = {
   /**
    * Starts an app sign in to the Drupal site process.
    * The sign in endpoint is specified by CONFIG.login.url -
-   * should be a Drupal sight using iForm Mobile Auth Module.
+   * should be a Drupal site using the Indicia API Module.
    *
    * It is important that the app authorises itself providing
    * api_key for the mentioned module.
