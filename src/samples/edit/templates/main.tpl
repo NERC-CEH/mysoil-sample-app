@@ -64,11 +64,11 @@
     </a>
   </li>
   <li class="table-view-cell">
-    <a href="#samples/<%- obj.id %>/edit/comment" id="comment-button"
+    <a href="#samples/<%- obj.id %>/edit/site" id="site-button"
        class="<%- obj.locks['comment'] ? 'lock' : 'navigate-right' %>">
-      <span class="media-object pull-left icon icon-comment"></span>
-      <span class="media-object pull-right descript"><%= obj.comment %></span>
-      Comment
+      <span class="media-object pull-left icon icon-site"></span>
+      <span class="media-object pull-right descript"><%= obj.site %></span>
+      Site
     </a>
   </li>
   <% if (obj.group_title) { %>

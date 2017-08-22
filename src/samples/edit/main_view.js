@@ -82,7 +82,7 @@ export default Marionette.View.extend({
       country: sample.get('country'),
       number: sample.get('number') && StringHelp.limit(sample.get('number')),
       reference: sample.get('reference') && StringHelp.limit(sample.get('reference')),
-      comment: occ.get('comment') && StringHelp.limit(occ.get('comment')),
+      site: sample.get('field-name') && StringHelp.limit(sample.get('field-name')),
       group_title: group ? group.title : null,
       group,
       locks: attrLocks,

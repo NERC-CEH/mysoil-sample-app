@@ -8,7 +8,6 @@ import CONFIG from 'config';
 import InputView from 'common/views/inputView';
 import RadioInputView from 'common/views/radioInputView';
 import TextareaView from 'common/views/textareaInputView';
-import NumberAttrView from './numberAttrView';
 
 export default Marionette.View.extend({
   template: _.template('<div id="attribute"></div>'),
@@ -36,12 +35,12 @@ export default Marionette.View.extend({
    */
   _getAttrView() {
     const sample = this.model;
-    const occ = sample.getOccurrence();
+    const attr = this.options.attr;
 
     const surveyConfig = CONFIG.indicia.surveys.general;
 
     let attrView;
-    switch (this.options.attr) {
+    switch (attr) {
       case 'date':
         attrView = new InputView({
           default: sample.get('date'),
@@ -50,31 +49,34 @@ export default Marionette.View.extend({
         });
         break;
 
+        case 'number':
+        case 'reference':
+        case 'field-name':
+        case 'field-size':
+        case 'depth':
+        attrView = new InputView({
+          config: surveyConfig.sample[attr],
+          default: sample.get(attr),
+        });
+        break;
+
         case 'country':
+        case 'type':
+        case 'soil':
+        case 'crop-present':
+        case 'crop-future':
+        case 'straw':
+        case 'manure':
         attrView = new RadioInputView({
-          config: surveyConfig.sample['country'],
-          default: sample.get('country'),
+          config: surveyConfig.sample[attr],
+          default: sample.get(attr),
         });
         break;
 
-      case 'number':
-        attrView = new InputView({
-          config: surveyConfig.sample['number'],
-          default: sample.get('number'),
-        });
-        break;
-
-      case 'reference':
-        attrView = new InputView({
-          config: surveyConfig.sample['reference'],
-          default: sample.get('reference'),
-        });
-        break;
-
-      case 'comment':
+        case 'comment':
         attrView = new TextareaView({
           config: surveyConfig.sample.comment,
-          default: occ.get('comment'),
+          default: sample.get('comment'),
         });
         break;
 
@@ -87,7 +89,7 @@ export default Marionette.View.extend({
         break;
 
       default:
-        Log('Samples:AttrView: no such attribute to show!', 'e');
+        Log(`Samples:AttrView:${attr} no such attribute to show!`, 'e');
     }
 
     return attrView;

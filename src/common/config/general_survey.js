@@ -4,10 +4,16 @@
 import $ from 'jquery';
 import Indicia from 'indicia';
 import DateHelp from 'helpers/date';
+import cropsData from 'crops.data';
+
+const crops = {};
+cropsData.forEach((el) => {
+  crops[el.name] = el.id;
+});
 
 const config = {
-  survey_id: 374,
-  input_form: 'enter-app-record',
+  survey_id: 2,
+  input_form: 'poc-recording-form',
 
   sample: {
     location: {
@@ -61,8 +67,74 @@ const config = {
     },
 
     reference: {
-      label: 'Add your own reference, if you wish, to help identify the sample',
+      label: 'Add your own reference, if you wish, to help identify the sample.',
       id: 24,
+    },
+
+    'field-name': {
+      label: 'Enter the field name.',
+      id: 25,
+    },
+
+    'field-size': {
+      label: 'Enter the field size in hectares.',
+      id: 26,
+    },
+
+    'depth': {
+      label: 'Enter the sample depth in centimetres.',
+      id: 27,
+    },
+
+    'type': {
+      label: 'Select the sample type.',
+      id: 28,
+      values: {
+        'Single': 142,
+        'Bulked': 143,
+      },
+    },
+
+    'soil': {
+      label: 'Select the soil type.',
+      id: 29,
+      values: {
+        'Light - sand etc.': 144,
+        'Medium - loams': 145,
+        'Heavy - clay': 146,
+        'Organic - high OM content': 147,
+        'Peaty soils': 148,
+      },
+    },
+
+    'crop-present': {
+      label: 'Select the crop present in the field.',
+      id: 30,
+      values: crops,
+    },
+
+    'crop-future': {
+      label: 'Select the intended future crop.',
+      id: 31,
+      values: crops,
+    },
+
+    'straw': {
+      label: 'Select whether straw has been removed.',
+      id: 32,
+      values: {
+        'Removed': 't',
+        'Not removed': 'f',
+      },
+    },
+
+    'manure': {
+      label: 'Select whether farmyard manure has been added.',
+      id: 33,
+      values: {
+        'Added': 't',
+        'Not added': 'f',
+      },
     },
 
     date: {
@@ -81,6 +153,7 @@ const config = {
       label: 'Please add any extra info about this record.',
     },
   },
+
   occurrence: {
     training: {
       id: 'training',
@@ -89,22 +162,6 @@ const config = {
     taxon: {
       values(taxon) {
         return taxon.warehouse_id;
-      },
-    },
-    number: {
-      id: 16,
-      label: 'How many individuals of this type?',
-    },
-    'number-ranges': {
-      id: 523,
-      default: 'Present',
-      values: {
-        1: 665,
-        '2-5': 666,
-        '6-20': 667,
-        '21-100': 668,
-        '101-500': 669,
-        '500+': 670,
       },
     },
   },

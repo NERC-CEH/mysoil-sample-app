@@ -123,15 +123,18 @@ const API = {
         }
         break;
       case 'comment':
-        currentVal = occ.get(attr);
-        newVal = values[attr];
-
-        // todo:validate before setting up
-        occ.set(attr, values[attr]);
-        break;
       case 'country':
       case 'number':
       case 'reference':
+      case 'field-name':
+      case 'field-size':
+      case 'depth':
+      case 'type':
+      case 'soil':
+      case 'crop-present':
+      case 'crop-future':
+      case 'straw':
+      case 'manure':
         currentVal = sample.get(attr);
         newVal = values[attr];
 

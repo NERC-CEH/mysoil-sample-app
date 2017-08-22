@@ -117,18 +117,18 @@ export default {
           sample.set('date', new Date(val));
           break;
         case 'country':
-          sample.set('country', val);
-          break;
         case 'reference':
-          sample.set('reference', val);
-          break;
+        case 'field-name':
+        case 'field-size':
+        case 'depth':
+        case 'type':
+        case 'soil':
+        case 'crop-present':
+        case 'crop-future':
+        case 'straw':
+        case 'manure':
         case 'comment':
-          model = sample;
-          if (survey === 'general') {
-            occurrence = sample.getOccurrence();
-            model = occurrence;
-          }
-          occurrence.set('comment', val);
+        sample.set(key, val);
           break;
         default:
       }
