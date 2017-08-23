@@ -137,6 +137,20 @@ const config = {
       },
     },
 
+    'lab-name': {
+      label: 'Select the laboratory that will analyse samples.',
+      id: 34,
+      values: {
+        'CEH': 229,
+        'NRM': 230,
+      },
+    },
+
+    'client-code': {
+      label: 'Enter your client code for the laboratory.',
+      id: 22,
+    },
+
     date: {
       values(date) {
         return DateHelp.print(date);

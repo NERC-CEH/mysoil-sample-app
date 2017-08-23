@@ -116,22 +116,10 @@ export default {
           // parse stringified date
           sample.set('date', new Date(val));
           break;
-        case 'country':
-        case 'reference':
-        case 'field-name':
-        case 'field-size':
-        case 'depth':
-        case 'type':
-        case 'soil':
-        case 'crop-present':
-        case 'crop-future':
-        case 'straw':
-        case 'manure':
-        case 'comment':
-        sample.set(key, val);
-          break;
         default:
-      }
+          sample.set(key, val);
+          break;
+    }
     });
   },
 

@@ -21,7 +21,7 @@ const API = {
       return;
     }
 
-    Log('Samples:Edit:Site:Controller: showing.');
+    Log('Samples:Edit:Laboratory:Controller: showing.');
 
     const sample = savedSamples.get(sampleID);
     // Not found
@@ -45,7 +45,7 @@ const API = {
 
     // HEADER
     const headerView = new HeaderView({
-      model: new Backbone.Model({ title: 'Site' }),
+      model: new Backbone.Model({ title: 'Laboratory' }),
     });
     radio.trigger('app:header', headerView);
 

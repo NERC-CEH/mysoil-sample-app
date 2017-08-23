@@ -122,27 +122,14 @@ const API = {
           sample.set('date', newVal);
         }
         break;
-      case 'comment':
-      case 'country':
-      case 'number':
-      case 'reference':
-      case 'field-name':
-      case 'field-size':
-      case 'depth':
-      case 'type':
-      case 'soil':
-      case 'crop-present':
-      case 'crop-future':
-      case 'straw':
-      case 'manure':
+      default:
         currentVal = sample.get(attr);
         newVal = values[attr];
 
         // todo:validate before setting up
         sample.set(attr, values[attr]);
         break;
-      default:
-    }
+  }
 
     // save it
     sample.save()
@@ -168,25 +155,6 @@ const API = {
           appModel.setAttrLock(attr, null);
         } else {
           appModel.setAttrLock(attr, newVal);
-        }
-        break;
-      case 'number-ranges':
-        if (!lockedValue) {
-          lockedValue = appModel.getAttrLock('number');
-        }
-      case 'number':
-        if (!lockedValue) {
-          lockedValue = appModel.getAttrLock('number-ranges');
-        }
-
-        if (!lockedValue) return; // nothing was locked
-
-        if (attr === 'number-ranges') {
-          appModel.setAttrLock(attr, newVal);
-          appModel.setAttrLock('number', null);
-        } else {
-          appModel.setAttrLock(attr, newVal);
-          appModel.setAttrLock('number-ranges', null);
         }
         break;
       default:

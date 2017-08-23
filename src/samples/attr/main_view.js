@@ -54,6 +54,7 @@ export default Marionette.View.extend({
         case 'field-name':
         case 'field-size':
         case 'depth':
+        case 'client-code':
         attrView = new InputView({
           config: surveyConfig.sample[attr],
           default: sample.get(attr),
@@ -67,6 +68,7 @@ export default Marionette.View.extend({
         case 'crop-future':
         case 'straw':
         case 'manure':
+        case 'lab-name':
         attrView = new RadioInputView({
           config: surveyConfig.sample[attr],
           default: sample.get(attr),
@@ -101,16 +103,7 @@ export default Marionette.View.extend({
    */
   getValues() {
     const values = {};
-
-    if (this.options.attr === 'number') {
-      const [value, range] = this.attrView.getValues();
-      values[this.options.attr] = value;
-      values['number-ranges'] = range;
-      return values;
-    }
-
     values[this.options.attr] = this.attrView.getValues();
-
     return values;
   },
 });
