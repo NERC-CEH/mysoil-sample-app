@@ -42,7 +42,6 @@
   <li class="table-view-cell">
     <a href="#samples/<%- obj.id %>/edit/country" id="country-button"
        class="<%- obj.locks['country'] ? 'lock' : 'navigate-right' %>">
-      <span class="media-object pull-left icon icon-country"></span>
       <span class="media-object pull-right descript"><%- obj.country %></span>
       Country
     </a>
@@ -50,7 +49,6 @@
   <li class="table-view-cell">
     <a href="#samples/<%- obj.id %>/edit/number" id="number-button"
        class="<%- obj.locks['number'] ? 'lock' : 'navigate-right' %>">
-      <span class="media-object pull-left icon icon-number"></span>
       <span class="media-object pull-right descript"><%- obj.number %></span>
       Sample number
     </a>
@@ -58,7 +56,6 @@
   <li class="table-view-cell">
     <a href="#samples/<%- obj.id %>/edit/reference" id="reference-button"
        class="<%- obj.locks['number'] ? 'lock' : 'navigate-right' %>">
-      <span class="media-object pull-left icon icon-reference"></span>
       <span class="media-object pull-right descript"><%- obj.reference %></span>
       Your reference
     </a>
@@ -66,7 +63,6 @@
   <li class="table-view-cell">
     <a href="#samples/<%- obj.id %>/edit/site" id="site-button" 
       class="navigate-right">
-      <span class="media-object pull-left icon icon-site"></span>
       <span class="media-object pull-right descript"><%= obj.site %></span>
       Site
     </a>
@@ -74,7 +70,6 @@
   <li class="table-view-cell">
     <a href="#samples/<%- obj.id %>/edit/laboratory" id="laboratory-button" 
       class="navigate-right">
-      <span class="media-object pull-left icon icon-laboratory"></span>
       <span class="media-object pull-right descript"><%= obj.laboratory %></span>
       Laboratory
     </a>
