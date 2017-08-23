@@ -170,25 +170,14 @@ const API = {
   },
 
   createNewSample() {
-    radio.trigger('samples:edit:attr', null, 'taxon', {
-      onSuccess(taxon, editButtonClicked) {
-        Factory.createSample('general', null, taxon)
-          .then(sample => sample.save())
-          .then((sample) => {
-            // add to main collection
-            savedSamples.add(sample);
+    Factory.createSample()
+      .then(sample => sample.save())
+      .then((sample) => {
+        // add to main collection
+        savedSamples.add(sample);
 
-            // navigate
-            if (editButtonClicked) {
-              radio.trigger('samples:edit', sample.cid, { replace: true });
-            } else {
-              // return back to list page
-              window.history.back();
-            }
-          });
-      },
-      showEditButton: true,
-    });
+        radio.trigger('samples:edit', sample.cid, { replace: true });
+      });
   },
 
   /**

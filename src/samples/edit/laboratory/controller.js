@@ -1,3 +1,6 @@
+/** ****************************************************************************
+ * Sample Edit Laboratory controller.
+ *****************************************************************************/
 import Backbone from 'backbone';
 import _ from 'lodash';
 import Indicia from 'indicia';

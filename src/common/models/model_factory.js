@@ -6,61 +6,22 @@ import Sample from './sample';
 import Occurrence from './occurrence';
 
 const Factory = {
-  createSample(survey, image, taxon) {
-    if (!survey) {
-      return Promise.reject(new Error('Survey options are missing.'));
-    }
-
-    // plant survey
-    if (survey === 'plant') {
-      return Factory._getPlantSample(image, taxon);
-    }
-
-    return Factory._getGeneralSample(image, taxon);
-  },
-
-  _getPlantSample(image, taxon) {
-    // add currently logged in user as one of the recorders
-    const recorders = [];
+  createSample() {
+    let uid = "Jim123";
     if (userModel.hasLogIn()) {
-      recorders.push(`${userModel.get('firstname')} ${userModel.get('secondname')}`);
+      uid = userModel.get('drupalID');
     }
-
+    let now = new Date();
+    uid += '-' + now.getFullYear() + (now.getMonth() + 1) + now.getDate();
+    uid += '-' + now.getHours() + now.getMinutes() + now.getSeconds();
+   
     const sample = new Sample({
-      location_type: 'british',
-      sample_method_id: 7305,
-      recorders,
+      uid: uid,
     }, {
-      metadata: {
-        survey: 'plant',
-        complex_survey: true,
-        gridSquareUnit: appModel.get('gridSquareUnit'),
-      },
-    });
-
-    // occurrence with image - pic select-first only
-    if (image) {
-      const occurrence = new Occurrence({ taxon });
-      occurrence.addMedia(image);
-      sample.addOccurrence(occurrence);
-    }
-
-    return Promise.resolve(sample);
-  },
-
-  _getGeneralSample(image, taxon) {
-    // general survey
-    const occurrence = new Occurrence({ taxon });
-    if (image) {
-      occurrence.addMedia(image);
-    }
-
-    const sample = new Sample(null, {
       metadata: {
         survey: 'general',
       },
     });
-    sample.addOccurrence(occurrence);
 
     // append locked attributes
     appModel.appendAttrLocks(sample);
@@ -76,15 +37,6 @@ const Factory = {
     return Promise.resolve(sample);
   },
 
-  /**
-   * Creates a new sample with an image passed as an argument.
-   *
-   * Empty taxon.
-   */
-  createSampleWithPhoto(survey, photo) {
-    return ImageHelp.getImageModel(ImageModel, photo)
-      .then(image => Factory.createSample(survey, image));
-  },
 };
 
 export default Factory;

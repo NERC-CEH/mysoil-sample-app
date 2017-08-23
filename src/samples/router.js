@@ -18,7 +18,6 @@ import ActivitiesController from '../common/pages/activities/controller';
 import EditSiteController from './edit/site/controller';
 import EditLaboratoryController from './edit/laboratory/controller';
 import EditAttrController from './attr/controller';
-import TaxonController from '../common/pages/taxon/controller';
 
 App.samples = {};
 
@@ -51,14 +50,13 @@ const Router = Marionette.AppRouter.extend({
         scroll = $mainRegion.scrollTop();
       },
     },
-    'samples/new(/)': TaxonController.show,
+    'samples/new(/)': EditController.show,
     'samples/:id': ShowController.show,
     'samples/:id/edit(/)': EditController.show,
     'samples/:id/edit/location(/)': EditLocationController.show,
     'samples/:id/edit/activity(/)': ActivitiesController.show,
     'samples/:id/edit/site(/)': EditSiteController.show,
     'samples/:id/edit/laboratory(/)': EditLaboratoryController.show,
-    'samples/:id/edit/taxon(/)': TaxonController.show,
     'samples/:id/edit/:attr(/)': EditAttrController.show,
     'samples/*path': () => { radio.trigger('app:404:show'); },
   },

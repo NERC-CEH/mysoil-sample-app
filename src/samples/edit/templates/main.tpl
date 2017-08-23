@@ -1,12 +1,9 @@
 <ul class="table-view core inputs no-top <%- obj.isSynchronising ? 'disabled' : '' %>">
   <li class="table-view-cell">
-    <a id="species-button" class="navigate-right">
-      <% if (obj.commonName) { %>
-      <span class="media-object pull-right descript long"><%= obj.commonName %></span>
-      <% } %>
-      <span class="media-object pull-right descript long"><i><%= obj.scientificName %></i></span>
-    </a>
+    <span class="media-object pull-right descript"><%- obj.uid %></span>
+    Our ref.
   </li>
+
   <li class="table-view-cell">
     <a href="#samples/<%- obj.id %>/edit/location" id="location-button"
        class="<%- obj.locks['location'] || obj.locks['locationName'] ? '' : 'navigate-right' %>">
@@ -57,7 +54,7 @@
     <a href="#samples/<%- obj.id %>/edit/reference" id="reference-button"
        class="<%- obj.locks['number'] ? 'lock' : 'navigate-right' %>">
       <span class="media-object pull-right descript"><%- obj.reference %></span>
-      Your reference
+      Your ref.
     </a>
   </li>
   <li class="table-view-cell">

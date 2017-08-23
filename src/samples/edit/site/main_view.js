@@ -1,3 +1,6 @@
+/** ****************************************************************************
+ * Sample Edit Site main view.
+ *****************************************************************************/
 import Marionette from 'backbone.marionette';
 import Indicia from 'indicia';
 import JST from 'JST';

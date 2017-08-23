@@ -103,10 +103,8 @@ const SampleView = Marionette.View.extend({
 
   serializeData() {
     const sample = this.model;
-    const occ = sample.getOccurrence();
     const date = DateHelp.print(sample.get('date'), true);
-    const specie = occ.get('taxon') || {};
-    const media = occ.media;
+    const media = sample.media;
     let img = media.length && media.at(0).get('thumbnail');
 
     if (!img) {
@@ -114,22 +112,18 @@ const SampleView = Marionette.View.extend({
       img = media.length && media.at(0).getURL();
     }
 
-    const taxon = specie[specie.found_in_name];
-
     const syncStatus = this.model.getSyncStatus();
 
     const locationPrint = sample.printLocation();
     const location = sample.get('location') || {};
 
-    let number = occ.get('number') && StringHelp.limit(occ.get('number'));
-    if (!number) {
-      number = occ.get('number-ranges') && StringHelp.limit(occ.get('number-ranges'));
-    }
+    let number = sample.get('number') && StringHelp.limit(sample.get('number'));
 
     const group = sample.get('group');
 
     return {
       id: sample.cid,
+      uid:  sample.get('uid'),
       saved: sample.metadata.saved,
       training: sample.metadata.training,
       onDatabase: syncStatus === Indicia.SYNCED,
@@ -138,10 +132,8 @@ const SampleView = Marionette.View.extend({
       locationName: location.name,
       isSynchronising: syncStatus === Indicia.SYNCHRONISING,
       date,
-      taxon,
       number,
-      stage: occ.get('stage') && StringHelp.limit(occ.get('stage')),
-      comment: occ.get('comment'),
+      comment: sample.get('comment'),
       group,
       img: img ? `<img src="${img}"/>` : '',
     };

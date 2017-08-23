@@ -46,13 +46,7 @@ export default Marionette.View.extend({
 
   serializeData() {
     const sample = this.model.get('sample');
-    const occ = sample.getOccurrence();
-    const specie = occ.get('taxon') || {};
     const appModel = this.model.get('appModel');
-
-    // taxon
-    const scientificName = specie.scientific_name;
-    const commonName = specie.common_name;
 
     const locationPrint = sample.printLocation();
     const location = sample.get('location') || {};
@@ -61,7 +55,6 @@ export default Marionette.View.extend({
       date: appModel.isAttrLocked('date', sample.get('date')),
       location: appModel.isAttrLocked('location', location),
       locationName: appModel.isAttrLocked('locationName', location.name),
-      comment: appModel.isAttrLocked('comment', occ.get('comment')),
       activity: appModel.isAttrLocked('activity', sample.get('group')),
       activity: appModel.isAttrLocked('country', sample.get('country')),
       activity: appModel.isAttrLocked('reference', sample.get('reference')),
@@ -72,8 +65,7 @@ export default Marionette.View.extend({
 
     return {
       id: sample.cid,
-      scientificName,
-      commonName,
+      uid: sample.get('uid'),
       isLocating: sample.isGPSRunning(),
       isSynchronising: sample.getSyncStatus() === Indicia.SYNCHRONISING,
       location: locationPrint,

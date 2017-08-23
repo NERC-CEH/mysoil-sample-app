@@ -26,10 +26,10 @@
     </div>
 
     <div class="media-body">
-      <% if (obj.taxon) { %>
-      <div class="species"> <%= obj.taxon %></div>
+      <% if (obj.uid) { %>
+      <div class="uid"> <%= obj.uid %></div>
       <% } else { %>
-      <div class="species error">Species missing</div>
+      <div class="uid error">UID missing</div>
       <% } %>
 
       <div class="core">
