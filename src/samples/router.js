@@ -83,14 +83,14 @@ radio.on('samples:edit:attr', (sampleID, attrID, options = {}) => {
     case 'location':
       EditLocationController.show(sampleID);
       break;
-    case 'taxon':
-      TaxonController.show(options);
-      break;
     case 'activity':
       ActivitiesController.show(sampleID);
       break;
     case 'site':
       EditSiteController.show(sampleID);
+      break;
+    case 'laboratory':
+      EditLaboratoryController.show(sampleID);
       break;
     default:
       EditAttrController.show(sampleID, attrID);
