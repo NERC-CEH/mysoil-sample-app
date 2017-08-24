@@ -15,6 +15,15 @@ export default Marionette.View.extend({
     const appModel = this.model.get('appModel');
 
     const attrLocks = {
+      'field-name': appModel.isAttrLocked('field-name', sample.get('field-name')),
+      'field-size': appModel.isAttrLocked('field-size', sample.get('field-size')),
+      'depth': appModel.isAttrLocked('depth', sample.get('depth')),
+      'type': appModel.isAttrLocked('type', sample.get('type')),
+      'soil': appModel.isAttrLocked('soil', sample.get('soil')),
+      'crop-present': appModel.isAttrLocked('crop-present', sample.get('crop-present')),
+      'crop-future': appModel.isAttrLocked('crop-future', sample.get('crop-future')),
+      'straw': appModel.isAttrLocked('straw', sample.get('straw')),
+      'manure': appModel.isAttrLocked('manure', sample.get('manure')),
       comment: appModel.isAttrLocked('comment', sample.get('comment')),
     };
 
