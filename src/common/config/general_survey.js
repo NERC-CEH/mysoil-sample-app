@@ -35,21 +35,23 @@ const config = {
         return `${location.latitude}, ${location.longitude}`;
       },
     },
-    location_accuracy: { id: 282 },
-    location_altitude: { id: 283 },
-    location_altitude_accuracy: { id: 284 },
-    location_source: { id: 760 },
-    location_gridref: { id: 335 },
+    location_accuracy: { id: 36 },
+    location_altitude: { id: 37 },
+    location_altitude_accuracy: { id: 38 },
+    location_source: { id: 39 },
+    location_gridref: { id: 40 },
 
     device: {
-      id: 273,
+      id: 41,
       values: {
-        iOS: 2398,
-        Android: 2399,
+        iOS: 233,
+        Android: 234,
       },
     },
 
-    device_version: { id: 759 },
+    device_version: { id: 42 },
+
+    uid: { id: 35 },
 
     country: {
       label: 'Please pick the country where you are working.',
@@ -182,7 +184,6 @@ const config = {
 
   verify(attrs) {
     const attributes = {};
-    const occurrences = {};
 
     // todo: remove this bit once sample DB update is possible
     // check if saved or already send
@@ -215,20 +216,7 @@ const config = {
       attributes.location_type = 'can\'t be blank';
     }
 
-    // occurrences
-    if (this.occurrences.length === 0) {
-      attributes.occurrences = 'no species selected';
-    } else {
-      this.occurrences.each((occurrence) => {
-        const errors = occurrence.validate(null, { remote: true });
-        if (errors) {
-          const occurrenceID = occurrence.cid;
-          occurrences[occurrenceID] = errors;
-        }
-      });
-    }
-
-    return [attributes, null, occurrences];
+    return [attributes, null, null];
   },
 };
 
