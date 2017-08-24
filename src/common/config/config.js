@@ -4,7 +4,6 @@
 import Indicia from 'indicia';
 
 import generalSurvey from './general_survey';
-import plantSurvey from './plant_survey';
 
 const HOST = process.env.APP_INDICIA_API_HOST || 'https://mysoilsample.org/';
 
@@ -63,7 +62,6 @@ const CONFIG = {
 
     surveys: {
       general: generalSurvey,
-      plant: plantSurvey,
     },
   },
 };
