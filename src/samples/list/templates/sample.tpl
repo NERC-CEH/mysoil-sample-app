@@ -1,13 +1,10 @@
-<% if (obj.taxon) { %>
+
   <a
     <% if (!obj.isSynchronising) { %>
       href="#samples/<%- obj.id %><%- obj.onDatabase ? '' : '/edit' %>"
     <% } %>
     class="mobile">
 
-  <% } else { %>
-  <a id="add-species-btn" class="mobile">
-    <% } %>
     <% if (obj.training) { %>
     <div class="media-object pull-left training"></div>
     <% } %>
@@ -58,7 +55,6 @@
 
       <div class="attributes">
         <div class="number"><%= obj.number %></div>
-        <div class="stage"><%= obj.stage %></div>
         <div class="comment"><%= obj.comment %></div>
       </div>
     </div>
