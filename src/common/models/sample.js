@@ -91,14 +91,6 @@ let Sample = Indicia.Sample.extend({ // eslint-disable-line
     submission.survey_id = survey.survey_id; // eslint-disable-line
     submission.input_form = survey.input_form; // eslint-disable-line
 
-    // add the survey_id to subsamples too
-    if (this.metadata.survey === 'plant') {
-      submission.samples.forEach((subSample) => {
-        subSample.survey_id = survey.survey_id; // eslint-disable-line
-        subSample.input_form = survey.input_form; // eslint-disable-line
-      });
-    }
-
     return Promise.resolve([submission, media]);
   },
 
