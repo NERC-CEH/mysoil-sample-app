@@ -7,7 +7,6 @@
   <li class="table-view-cell">
     <a href="#samples/<%- obj.id %>/edit/location" id="location-button"
        class="<%- obj.locks['location'] || obj.locks['locationName'] ? '' : 'navigate-right' %>">
-      <span class="media-object pull-left icon icon-location"></span>
 
       <% if (obj.location) { %>
       <span class="location media-object pull-right descript <%- obj.locks['location'] ? 'lock' : '' %>"><%- obj.location %></span>
@@ -31,7 +30,6 @@
   <li class="table-view-cell">
     <a href="#samples/<%- obj.id %>/edit/date" id="date-button"
        class="<%- obj.locks['date'] ? 'lock' : 'navigate-right' %>">
-      <span class="media-object pull-left icon icon-calendar"></span>
       <span class="media-object pull-right descript"><%- obj.date %></span>
       Date
     </a>
