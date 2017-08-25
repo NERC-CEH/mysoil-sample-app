@@ -39,45 +39,45 @@ export default Marionette.View.extend({
   serializeData() {
     const sample = this.model.get('sample');
     const appModel = this.model.get('appModel');
-    const occ = sample.getOccurrence();
-    const specie = occ.get('taxon');
-
-    // taxon
-    const scientificName = specie.scientific_name;
-    const commonName = specie.common_name;
 
     const syncStatus = sample.getSyncStatus();
 
     const locationPrint = sample.printLocation();
     const location = sample.get('location') || {};
 
-    let number = occ.get('number') && StringHelp.limit(occ.get('number'));
-    if (!number) {
-      number = occ.get('number-ranges') && StringHelp.limit(occ.get('number-ranges'));
-    }
-
 
     // show activity title.
     const group = sample.get('group');
 
     return {
-      id: occ.id,
-      cid: occ.cid,
+      id: sample.id,
+      cid: sample.cid,
       useExperiments: appModel.get('useExperiments'),
       site_url: CONFIG.site_url,
       isSynchronising: syncStatus === Indicia.SYNCHRONISING,
       onDatabase: syncStatus === Indicia.SYNCED,
-      scientific_name: scientificName,
-      commonName,
+      uid: sample.get('uid'),
       location: locationPrint,
       locationName: location.name,
       date: DateHelp.print(sample.get('date'), true),
-      number,
-      stage: occ.get('stage') && StringHelp.limit(occ.get('stage')),
-      identifiers: occ.get('identifiers'),
-      comment: occ.get('comment'),
+      country: sample.get('country'),
+      number: sample.get('number') && StringHelp.limit(sample.get('number')),
+      reference: sample.get('reference') && StringHelp.limit(sample.get('reference')),
+      'field-name': sample.get('field-name') && StringHelp.limit(sample.get('field-name')),
+      'field-size': sample.get('field-size') + 'ha',
+      depth: sample.get('depth') + 'cm',
+      type: sample.get('type'),
+      soil: sample.get('soil'),
+      'crop-present': sample.get('crop-present') && StringHelp.limit(sample.get('crop-present')),
+      'crop-future': sample.get('crop-future') && StringHelp.limit(sample.get('crop-future')),
+      straw: sample.get('straw'),
+      manure: sample.get('manure'),
+      comment: sample.get('comment') && StringHelp.limit(sample.get('comment')),
+      comment: sample.get('comment'),
+      'lab-name': sample.get('lab-name') && StringHelp.limit(sample.get('lab-name')),
+      'client-code': sample.get('client-code') && StringHelp.limit(sample.get('client-code')),
       group_title: group ? group.title : null,
-      media: occ.media,
+      media: sample.media,
     };
   },
 
