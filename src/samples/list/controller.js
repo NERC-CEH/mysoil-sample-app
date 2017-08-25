@@ -6,7 +6,9 @@ import radio from 'radio';
 import Log from 'helpers/log';
 import Analytics from 'helpers/analytics';
 import ImageHelp from 'helpers/image';
+import App from 'app';
 import appModel from 'app_model';
+import userModel from 'user_model';
 import savedSamples from 'saved_samples';
 import Factory from 'model_factory';
 import MainView from './main_view';
@@ -30,13 +32,6 @@ const API = {
     // HEADER
     const headerView = new HeaderView({ model: appModel });
 
-    headerView.on('photo:upload', (e) => {
-      const photo = e.target.files[0];
-      API.photoUpload(photo);
-    });
-
-    // android gallery/camera selection
-    headerView.on('photo:selection', API.photoSelect);
     headerView.on('create', () => API.createNewSample());
 
     radio.trigger('app:header', headerView);
@@ -167,7 +162,11 @@ const API = {
   },
 
   createNewSample() {
-    Factory.createSample()
+    if (!userModel.hasLogIn()) {
+      API.userLoginMessage();
+    }
+    else {
+      Factory.createSample()
       .then(sample => sample.save())
       .then((sample) => {
         // add to main collection
@@ -175,6 +174,7 @@ const API = {
 
         radio.trigger('samples:edit', sample.cid, { replace: true });
       });
+    }
   },
 
   /**
@@ -196,6 +196,22 @@ const API = {
       }
     });
   },
+
+  /**
+   * Notify the user why the there are no activities.
+   */
+  userLoginMessage() {
+    radio.trigger('app:dialog', {
+      title: 'Information',
+      body: 'Please log in to the app before adding a record.',
+      buttons: [{
+        id: 'ok',
+        title: 'OK',
+        onClick: App.regions.getRegion('dialog').hide,
+      }],
+    });
+  },
+
 };
 
 export { API as default };

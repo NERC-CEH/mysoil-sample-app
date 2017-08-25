@@ -7,10 +7,7 @@ import Occurrence from './occurrence';
 
 const Factory = {
   createSample() {
-    let uid = "Jim123";
-    if (userModel.hasLogIn()) {
-      uid = userModel.get('drupalID');
-    }
+    let uid = userModel.get('drupalID');
     let now = new Date();
     uid += '-' + now.getFullYear() + (now.getMonth() + 1) + now.getDate();
     uid += '-' + now.getHours() + now.getMinutes() + now.getSeconds();
