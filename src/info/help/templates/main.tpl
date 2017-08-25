@@ -8,26 +8,9 @@
     </a>
     <p id="c1" class="collapse"
        aria-labelledby="headingOne" aria-expanded="false">
-      There are two ways to start a record.
-      <br>
-      <br>
-      <strong>Taking a photo</strong>
-      <br>
-      Press the camera button <span class="icon icon-camera"></span> in the home
-      page header. This will prompt you to select the photo source: camera or gallery.
-      Once you have picked a photo, the app will create a new record without any
-      species associated with it.
-      Clicking on the newly created record will open the taxa search page.
-      <br>
-      <br>
-      <strong>Selecting species</strong>
-      <br>
-      Please press the plus <span class="icon icon-plus"></span> button in the home page header.
-      This will bring you to the taxa search page. After selecting the species,
-      open the record (either by opening it directly from the taxa search page
-      using the edit button <span class="icon edit"></span> beside the species name or through
-      the home-list page) and fill in the details of the sighting, like location,
-      date, number seen etc.
+      Please press the plus <span class="icon icon-plus"></span> button in the home page
+      header. This will open the sample entry page. Fill in the details of the sample 
+      like location, date, soil type, current crop, etc.
       <br>
       <br>
       When finished, set for submission by pressing the paper plane
@@ -36,26 +19,9 @@
   </li>
   <li class="table-view-cell">
     <a class="collapsed" data-toggle="collapse" data-parent="#accordion"
-       href="#c2" aria-expanded="false" aria-controls="c2">
-      <span class="icon icon-collapse pull-left"></span>
-      Searching for species
-    </a>
-    <p id="c2" class="collapse"
-       aria-labelledby="headingOne" aria-expanded="false">
-      The application holds all of the UK’s species (70000+) and all the associated taxonomy ranks.
-      For quicker searching of the taxa you can use different shortcuts.
-      For example, to find <i>Puffinus puffinus</i> you can type in the search bar:
-      <br>
-      <br><i>puf puf</i>
-      <br><i>p puf</i>
-      <br><i>p .nus</i>
-    </p>
-  </li>
-  <li class="table-view-cell">
-    <a class="collapsed" data-toggle="collapse" data-parent="#accordion"
        href="#c3" aria-expanded="false" aria-controls="c3">
       <span class="icon icon-collapse pull-left"></span>
-      Sync. with iRecord
+      Sync. with mySoil Sample
     </a>
     <p id="c3" class="collapse"
        aria-labelledby="headingTwo" aria-expanded="false">
@@ -73,10 +39,10 @@
       (synced to the database). Once it has successfully reached
       the database the record becomes unavailable for new edits.
       To further edit it
-      please use the <a href="http://irecord.org.uk">iRecord Website</a>.
+      please use the <a href="https://mysoilsample.org">mySoil Sample Website</a>.
       <br>
       <br>
-      <b>Note:</b> you have to be signed in to your iRecord account and have a network connection,
+      <b>Note:</b> you have to be signed in to your account and have a network connection,
       for the records to be automatically synchronised in the background.
       <br>
   </li>
@@ -167,7 +133,7 @@
       <br><br>
       <b>Note:</b> only the activities that allow this mobile app records and only
       the ones that you have joined on the
-      iRecord website will be available to select.
+      mySoil Sample website will be available to select.
     </p>
   </li>
 
@@ -198,8 +164,8 @@
     </p>
   </li>
   <li>
-    For more help please visit the iRecord <a href="<%= obj.site_url %>/forum/26">forum</a>.
-    <p>Or drop us an <a href='mailto:apps%40ceh.ac.uk?subject=iRecord%20App%20Support%20%26%20Feedback&body=%0A%0A%0AVersion%3A%20<%- obj.version %>%0ABrowser%3A <%- window.navigator.appVersion %>%0A'>email</a>.
+    For more help please drop us an 
+    <a href='mailto:apps%40ceh.ac.uk?subject=mySoil%20Sample%20App%20Support%20%26%20Feedback&body=%0A%0A%0AVersion%3A%20<%- obj.version %>%0ABrowser%3A <%- window.navigator.appVersion %>%0A'>email</a>.
     </p>
   </li>
 </ul>
