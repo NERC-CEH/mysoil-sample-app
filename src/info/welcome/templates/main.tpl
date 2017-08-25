@@ -4,29 +4,30 @@
       <div class="swap first">
         <div class="message">
           <h2>Welcome</h2>
-          <p><b>iRecord</b> is a platform for management and
-            sharing of your wildlife observations.
+          <p><b>mySoil Sample</b> is a platform for recording and managing
+            soil sample data.
             Learn more by swiping left.</p>
         </div>
       </div>
       <div class="swap second">
         <div class="message">
           <h2>Record</h2>
-          <p>Record all the wildlife you see. Over <b>100,000 taxa</b> to choose from.</p>
+          <p><b>Enter</b> records through this app. <b>Review</b> your record history
+            and laboratory analyses on line.</p>
         </div>
       </div>
       <div class="swap third">
         <div class="message">
           <h2>Accuracy</h2>
-          <p>Benefit from your <b>GPS and rich mapping choices</b>,
-            further automatic <b>data checks</b> and review by experts.</p>
+          <p>Benefit from your <b>GPS</b> location,
+            automatic <b>validation</b> and reliable data <b>storage</b>.</p>
         </div>
       </div>
       <div class="swap fourth">
         <div class="message">
           <h2>Science</h2>
-          <p>Become a citizen scientist and contribute your sightings to
-            <b>research and conservation</b>.</p>
+          <p>Your records contribute to a central database supporting
+            <b>research, conservation and food security</b>.</p>
         </div>
       </div>
       <div class="swap fifth">
