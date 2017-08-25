@@ -5,6 +5,7 @@ import Marionette from 'backbone.marionette';
 import Indicia from 'indicia';
 import JST from 'JST';
 import StringHelp from 'helpers/string';
+import $ from 'jquery';
 
 
 export default Marionette.View.extend({
@@ -27,11 +28,16 @@ export default Marionette.View.extend({
       comment: appModel.isAttrLocked('comment', sample.get('comment')),
     };
 
+    const fieldSize = sample.get('field-size') + 
+      ($.isNumeric(sample.get('field-size')) ? ' ha' : '');
+    const depth = sample.get('depth') +
+      ($.isNumeric(sample.get('depth')) ? ' cm' : '');
+    
     return {
       id: sample.cid,
       fieldName: sample.get('field-name') && StringHelp.limit(sample.get('field-name')),
-      fieldSize: sample.get('field-size') + 'ha',
-      depth: sample.get('depth') + 'cm',
+      fieldSize,
+      depth,
       type: sample.get('type'),
       soil: sample.get('soil'),
       cropPresent: sample.get('crop-present') && StringHelp.limit(sample.get('crop-present')),
