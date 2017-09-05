@@ -53,3 +53,9 @@
     Credits
   </a>
 </li>
+<li class="table-view-cell">
+  <a href="#info/links" class="navigate-right">
+    <span class="media-object pull-left icon icon-link-ext"></span>
+    Links
+  </a>
+</li>

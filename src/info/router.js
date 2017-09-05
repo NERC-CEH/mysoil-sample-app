@@ -10,6 +10,7 @@ import radio from 'radio';
 import CommonController from '../common/controller';
 import InfoMenuController from './menu/controller';
 import WelcomeController from './welcome/controller';
+import LinksController from './links/controller';
 import './help/swipe_record.png';
 import './credits/sponsor_logo.png';
 
@@ -50,6 +51,7 @@ const Router = Marionette.AppRouter.extend({
         title: 'Credits', App, route: 'info/credits/main',
       });
     },
+    'info/links(/)': LinksController.show,
     'info/*path': () => { radio.trigger('app:404:show'); },
   },
 });

@@ -568,10 +568,14 @@ li.table-view-cell {
     border-right: none;
   }
 
-  &>a {
+  & > a {
     font-size: $button-font-size;
     &:hover {
       background-color: $color-gray-light;
+    }
+    & > span.subtext {
+      color: $color-gray-dark ;
+      font-size: $text-font-size;
     }
   }
 
