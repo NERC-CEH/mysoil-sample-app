@@ -51,11 +51,8 @@ export default Marionette.View.extend({
 
         case 'your-ref':
         case 'lab-ref':
-        case 'structure-notes':
-        case 'sample-notes':
         case 'field-name':
         case 'field-size':
-        case 'field-notes':
         case 'client-code':
         attrView = new InputView({
           config: surveyConfig.sample[attr],
@@ -83,10 +80,13 @@ export default Marionette.View.extend({
         });
         break;
 
+        case 'structure-notes':
+        case 'sample-notes':
+        case 'field-notes':
         case 'comment':
         attrView = new TextareaView({
-          config: surveyConfig.sample.comment,
-          default: sample.get('comment'),
+          config: surveyConfig.sample[attr],
+          default: sample.get(attr),
         });
         break;
 
