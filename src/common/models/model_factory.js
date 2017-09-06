@@ -4,19 +4,19 @@ import userModel from 'user_model';
 import appModel from 'app_model';
 import ImageModel from './image';
 import Sample from './sample';
-import Occurrence from './occurrence';
 
 const Factory = {
   createSample() {
     // Generate a uid of form uid-yyyymmdd-hhmmss
-    let uid = userModel.get('drupalID');
-    let now = new Date();
-    uid += '-' + now.getFullYear();
+    const id = userModel.get('drupalID');
+    const now = new Date();
+    let uid = now.getFullYear().toString().slice(-2);
     uid += _.padLeft(now.getMonth() + 1, 2, '0');
     uid += _.padLeft(now.getDate(), 2, '0');
     uid += '-' + _.padLeft(now.getHours(), 2, '0');
     uid += _.padLeft(now.getMinutes(), 2, '0');
     uid += _.padLeft(now.getSeconds(), 2, '0');
+    uid += '-' + _.padLeft(id, 6, '0');
    
     const sample = new Sample({
       uid: uid,

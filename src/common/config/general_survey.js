@@ -57,20 +57,21 @@ const config = {
       label: 'Please pick the country where you are working.',
       id: 21,
       values: {
-        GB: 139,
-        FR: 140,
-        DE: 141,
+        'England': 139,
+        'Wales': 140,
+        'Scotland': 141,
+        'N. Ireland': 235,
       },
     },
 
-    number: {
-      label: 'Enter sample number corresponding to that on box.',
-      id: 23,
-    },
-
-    reference: {
+    'your-ref': {
       label: 'Add your own reference, if you wish, to help identify the sample.',
       id: 24,
+    },
+
+    'lab-ref': {
+      label: 'Enter sample number or code from laboratory corresponding to that on box.',
+      id: 23,
     },
 
     'field-name': {
@@ -86,18 +87,23 @@ const config = {
     'depth': {
       label: 'Enter the sample depth in centimetres.',
       id: 27,
-    },
-
-    'type': {
-      label: 'Select the sample type.',
-      id: 28,
       values: {
-        'Single': 142,
-        'Bulked': 143,
+        '0-7.5 cm RB209 Long term grassland': 236,
+        '0-15 cm RB209 Arable and field vegetables': 237,
+        'Other': 238,
       },
     },
 
-    'soil': {
+    'sample-type': {
+      label: 'Select the sample type.',
+      id: 28,
+      values: {
+        'Point (single location)': 142,
+        'Field average (e.g. RB209 W)': 143,
+      },
+    },
+
+    'soil-type': {
       label: 'Select the soil type.',
       id: 29,
       values: {
@@ -107,6 +113,50 @@ const config = {
         'Organic - high OM content': 147,
         'Peaty soils': 148,
       },
+    },
+
+    'calcareous': {
+      label: 'Select whether your soil is on chalk or limestone.',
+      id: 45,
+      values: {
+        'Yes': 't',
+        'No': 'f',
+      },
+    },
+
+    'structure-score': {
+      label: 'Select the structure score (VESS).',
+      id: 44,
+      values: {
+        '1': 1,
+        '2': 2,
+        '3': 3,
+        '4': 4,
+        '5': 5,
+      },
+    },
+
+    'structure-notes': {
+      label: 'Add any notes relating to soil structure.',
+      id: 48,
+    },
+
+    'land-use': {
+      label: 'Select the rotaional land use.',
+      id: 43,
+      values: {
+        'Cropping - combinable crops': 239,
+        'Cropping - rotation including late harvested crops': 240,
+        'Cropping - rotation including leys': 241,
+        'Cropping - field-scale vegetables': 242,
+        'Grassland - intensively managed': 243,
+        'Grassland - permanent pasture': 244,
+      },
+    },
+
+    'sample-notes': {
+      label: 'Add any notes relating to the collected sample.',
+      id: 50,
     },
 
     'crop-present': {
@@ -131,12 +181,57 @@ const config = {
     },
 
     'manure': {
-      label: 'Select whether farmyard manure has been added.',
+      label: 'Select whether organic fertiliser has been added (includes farmyard manure, slurry, sewage sludge, compost).',
       id: 33,
       values: {
         'Added': 't',
         'Not added': 'f',
       },
+    },
+
+    'tillage': {
+      label: 'Select the type of tillage system employed.',
+      id: 47,
+      values: {
+        'Conservation / zero tillage': 268,
+        'Minimum / non-inversion': 269,
+        'Plough-based': 270,
+      },
+    },
+
+    'habitat': {
+      label: 'Select the broad habitat where the sample is being taken.',
+      id: 46,
+      values: {
+        'Arable and horticulture': 245,
+        'Calcareous grassland': 246,
+        'Improved grassland': 247,
+        'Neutral grassland': 248,
+        'Acid grassland': 249,
+        'Rough grassland': 250,
+        'Fen, marsh, swamp': 251,
+        'Bog': 252,
+        'Heather grassland': 253,
+        'Heather': 254,
+        'Broadleaved woodland': 255,
+        'Coniferous woodland': 256,
+        'Montane habitat': 257,
+        'Inland rock': 258,
+        'Freshwater': 259,
+        'Saltmarsh': 260,
+        'Supra-littoral sediment': 261,
+        'Supra-littoral rock': 262,
+        'Littoral-sediment': 263,
+        'Littoral-rock': 264,
+        'Saltwater': 265,
+        'Suburban': 266,
+        'Urban': 267,
+      },
+    },
+
+    'field-notes': {
+      label: 'Add any notes relating to field management.',
+      id: 49,
     },
 
     'lab-name': {

@@ -1,7 +1,33 @@
 <ul class="table-view core inputs no-top <%- obj.isSynchronising ? 'disabled' : '' %>">
   <li class="table-view-cell">
-    <span class="media-object pull-right descript"><%- obj.uid %></span>
-    Our ref.
+    <a id="uid-button">
+      <span class="pull-right descript"><%- obj.uid %></span>
+      Our reference: 
+    </a>
+  </li>
+
+  <li class="table-view-cell">
+    <a href="#samples/<%- obj.id %>/edit/your-ref" id="your-ref-button"
+       class="<%- obj.locks['your-ref'] ? 'lock' : 'navigate-right' %>">
+      <span class="media-object pull-right descript"><%- obj.yourRef %></span>
+      Your reference
+    </a>
+  </li>
+
+  <li class="table-view-cell">
+    <a href="#samples/<%- obj.id %>/edit/lab-ref" id="number-button"
+       class="<%- obj.locks['lab-ref'] ? 'lock' : 'navigate-right' %>">
+      <span class="media-object pull-right descript"><%- obj.labRef %></span>
+      Lab reference
+    </a>
+  </li>
+
+  <li class="table-view-cell">
+    <a href="#samples/<%- obj.id %>/edit/date" id="date-button"
+       class="<%- obj.locks['date'] ? 'lock' : 'navigate-right' %>">
+      <span class="media-object pull-right descript"><%- obj.date %></span>
+      Date
+    </a>
   </li>
 
   <li class="table-view-cell">
@@ -28,33 +54,21 @@
     </a>
   </li>
   <li class="table-view-cell">
-    <a href="#samples/<%- obj.id %>/edit/date" id="date-button"
-       class="<%- obj.locks['date'] ? 'lock' : 'navigate-right' %>">
-      <span class="media-object pull-right descript"><%- obj.date %></span>
-      Date
-    </a>
-  </li>
-  <li class="table-view-cell">
     <a href="#samples/<%- obj.id %>/edit/country" id="country-button"
        class="<%- obj.locks['country'] ? 'lock' : 'navigate-right' %>">
       <span class="media-object pull-right descript"><%- obj.country %></span>
       Country
     </a>
   </li>
+
   <li class="table-view-cell">
-    <a href="#samples/<%- obj.id %>/edit/number" id="number-button"
-       class="<%- obj.locks['number'] ? 'lock' : 'navigate-right' %>">
-      <span class="media-object pull-right descript"><%- obj.number %></span>
-      Sample number
+    <a href="#samples/<%- obj.id %>/edit/soil" id="soil-button" 
+      class="navigate-right">
+      <span class="media-object pull-right descript"><%= obj.soil %></span>
+      Soil
     </a>
   </li>
-  <li class="table-view-cell">
-    <a href="#samples/<%- obj.id %>/edit/reference" id="reference-button"
-       class="<%- obj.locks['number'] ? 'lock' : 'navigate-right' %>">
-      <span class="media-object pull-right descript"><%- obj.reference %></span>
-      Your ref.
-    </a>
-  </li>
+
   <li class="table-view-cell">
     <a href="#samples/<%- obj.id %>/edit/site" id="site-button" 
       class="navigate-right">
@@ -62,6 +76,7 @@
       Site
     </a>
   </li>
+
   <li class="table-view-cell">
     <a href="#samples/<%- obj.id %>/edit/laboratory" id="laboratory-button" 
       class="navigate-right">
@@ -69,6 +84,7 @@
       Laboratory
     </a>
   </li>
+
   <% if (obj.group_title) { %>
   <li class="table-view-cell">
     <a href="#samples/<%- obj.id %>/edit/activity" id="activity-button"

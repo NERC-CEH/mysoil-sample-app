@@ -49,11 +49,13 @@ export default Marionette.View.extend({
         });
         break;
 
-        case 'number':
-        case 'reference':
+        case 'your-ref':
+        case 'lab-ref':
+        case 'structure-notes':
+        case 'sample-notes':
         case 'field-name':
         case 'field-size':
-        case 'depth':
+        case 'field-notes':
         case 'client-code':
         attrView = new InputView({
           config: surveyConfig.sample[attr],
@@ -62,12 +64,18 @@ export default Marionette.View.extend({
         break;
 
         case 'country':
-        case 'type':
-        case 'soil':
+        case 'depth':
+        case 'sample-type':
+        case 'soil-type':
+        case 'calcareous':
+        case 'structure-score':
+        case 'land-use':
         case 'crop-present':
         case 'crop-future':
         case 'straw':
         case 'manure':
+        case 'tillage':
+        case 'habitat':
         case 'lab-name':
         attrView = new RadioInputView({
           config: surveyConfig.sample[attr],

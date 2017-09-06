@@ -57,7 +57,7 @@ export default Marionette.View.extend({
       locationName: appModel.isAttrLocked('locationName', location.name),
       activity: appModel.isAttrLocked('activity', sample.get('group')),
       activity: appModel.isAttrLocked('country', sample.get('country')),
-      activity: appModel.isAttrLocked('reference', sample.get('reference')),
+      activity: appModel.isAttrLocked('your-ref', sample.get('your-ref')),
     };
 
     // show activity title.
@@ -70,10 +70,10 @@ export default Marionette.View.extend({
       isSynchronising: sample.getSyncStatus() === Indicia.SYNCHRONISING,
       location: locationPrint,
       locationName: location.name,
+      yourRef: sample.get('your-ref') && StringHelp.limit(sample.get('your-ref')),
+      labRef: sample.get('lab-ref') && StringHelp.limit(sample.get('lab-ref')),
       date: DateHelp.print(sample.get('date'), true),
       country: sample.get('country'),
-      number: sample.get('number') && StringHelp.limit(sample.get('number')),
-      reference: sample.get('reference') && StringHelp.limit(sample.get('reference')),
       site: sample.get('field-name') && StringHelp.limit(sample.get('field-name')),
       laboratory: sample.get('lab-name') && StringHelp.limit(sample.get('lab-name')),
       group_title: group ? group.title : null,
