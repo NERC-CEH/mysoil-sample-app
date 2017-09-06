@@ -3,7 +3,7 @@
   "id": "uk.ac.ceh.mss",
   "title": "mySoil-Sample App",
   "description": "Mobile application for data collection when taking soil samples.",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "build": "1",
   "homepage": "https://mysoilsample.org",
   "author": {
