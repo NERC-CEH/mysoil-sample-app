@@ -8,6 +8,7 @@
     <p>
     <ul style="list-style-type: none;">
       <li>David Robinson (CEH)</li>
+      <li>Patrick Bell (BGS)</li>
       <li>David Roy (CEH)</li>
       <li>Chris Bell (CEH)</li>
       <li>Jim Bacon (CEH)</li>
@@ -17,8 +18,7 @@
     </p>
     <p>
       This app has been funded by the
-      <a href="https://www.nerc.ac.uk/">Natural Environment Research Council</a>
-      through an Innovation Pathfinder award.
+      <a href="https://www.nerc.ac.uk/">Natural Environment Research Council</a>.
     </p>
   </li>
 </ul>
