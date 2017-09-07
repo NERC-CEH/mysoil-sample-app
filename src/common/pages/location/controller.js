@@ -96,6 +96,7 @@ const API = {
     // gps
     mainView.on('gps:click', () => API.onGPSClick(sample));
     sample.on('geolocation:error', (error) => API.onGPSError(error));
+    sample.on('geolocation:update', (location) => API.onGPSUpdate(location));
     
     // location name
     mainView.on('location:name:change',
@@ -243,6 +244,23 @@ How you do this varies from one browser to another but you should be able to fin
     radio.trigger('app:dialog', {
       class: 'error',
       title: 'Location error',
+      body: [msg, help].join('<br/>'),
+      buttons: [{
+        id: 'ok',
+        title: 'OK',
+        onClick: App.regions.getRegion('dialog').hide,
+      }],
+    });
+  },
+
+  onGPSUpdate(location) {
+    const msg = `Location obtained with accuracy of ${location.accuracy}m`;
+    const help = `
+Trying to obtain better accuracy from your device.
+If a better fix cannot be obtained, enter a position by hand.`;
+
+    radio.trigger('app:dialog', {
+      title: 'Location update',
       body: [msg, help].join('<br/>'),
       buttons: [{
         id: 'ok',
