@@ -25,6 +25,8 @@ const CONFIG = {
   // process.env.ENV is set in 
   // config/webpack.dev.js to 'development' and
   // config/webpack.prod.js to 'production'
+  // unless the server environment overrides this.
+  // E.g. Heroku sets NODE_ENV to 'production' by default.
   // use full logging if not production
   log: process.env.ENV !== 'production',
 
