@@ -85,7 +85,7 @@ const config = {
     },
 
     'depth': {
-      label: 'Enter the sample depth in centimetres.',
+      label: 'Select the sample depth.',
       id: 27,
       values: {
         '0-7.5 cm RB209 Long term grassland': 236,
