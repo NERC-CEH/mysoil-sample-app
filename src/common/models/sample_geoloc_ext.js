@@ -32,7 +32,7 @@ const extension = {
 
         if (error) {
           that.trigger('geolocation', location);
-          that.trigger('geolocation:error', location);
+          that.trigger('geolocation:error', error);
           return;
         }
 

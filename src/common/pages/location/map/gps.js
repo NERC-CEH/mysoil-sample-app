@@ -56,7 +56,7 @@ const API = {
   },
 
   _set_gps_progress_feedback(state) {
-    Log('Location:MainView:Map: updating gps button state.');
+    Log(`Location:MainView:Map: updating gps button state to ${state}`);
     const $gpsButton = this.$el.find('.gps-btn');
     // change state
     $gpsButton.attr('data-gps-progress', state);

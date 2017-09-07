@@ -95,7 +95,8 @@ const API = {
 
     // gps
     mainView.on('gps:click', () => API.onGPSClick(sample));
-
+    sample.on('geolocation:error', (error) => API.onGPSError(error));
+    
     // location name
     mainView.on('location:name:change',
       locationName => API.updateLocationName(sample, locationName)
@@ -226,6 +227,29 @@ const API = {
     } else {
       sample.startGPS();
     }
+  },
+
+  onGPSError(error) {
+    const msg = error.message;
+    let help = '';
+    if (msg === "User denied Geolocation" || // Chrome
+        msg === "User denied geolocation prompt") // Firefox
+    {
+      help = `
+We cannot determine your position unless you allow your browser to access location services for this site. 
+How you do this varies from one browser to another but you should be able to find instructions online.`;
+    }
+
+    radio.trigger('app:dialog', {
+      class: 'error',
+      title: 'Location error',
+      body: [msg, help].join('<br/>'),
+      buttons: [{
+        id: 'ok',
+        title: 'OK',
+        onClick: App.regions.getRegion('dialog').hide,
+      }],
+    });
   },
 
   /**
