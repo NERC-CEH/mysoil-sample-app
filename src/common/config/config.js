@@ -22,8 +22,11 @@ const CONFIG = {
 
   site_url: HOST,
 
-  // use prod logging if testing otherwise full log
-  log: process.env.ENV !== 'testing',
+  // process.env.ENV is set in 
+  // config/webpack.dev.js to 'development' and
+  // config/webpack.prod.js to 'production'
+  // use full logging if not production
+  log: process.env.ENV !== 'production',
 
   // google analytics
   ga: {

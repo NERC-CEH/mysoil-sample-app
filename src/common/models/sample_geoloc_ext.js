@@ -18,11 +18,15 @@ const extension = {
     const options = {
       accuracyLimit,
       onUpdate(location) {
+        // Called when GPS returns value of insufficient accuracy.
+        Log('SampleModel:GPS: onUpdate.');
         that.trigger('geolocation', location);
         that.trigger('geolocation:update', location);
       },
 
       callback(error, loc) {
+        // Called on accurate GPS location or error.
+        Log('SampleModel:GPS: callback.');
         let location = loc;
         extension.stopGPS.call(that, { silent: true });
 

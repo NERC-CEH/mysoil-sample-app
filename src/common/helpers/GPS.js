@@ -75,10 +75,12 @@ const API = {
     };
 
     const onSuccess = (position) => {
+      let accuracy = parseInt(position.coords.accuracy, 10)
+      Log(`GPS: success with accuracy ${accuracy}`);
       const location = {
         latitude: position.coords.latitude.toFixed(8),
         longitude: position.coords.longitude.toFixed(8),
-        accuracy: parseInt(position.coords.accuracy, 10),
+        accuracy,
         altitude: parseInt(position.coords.altitude, 10),
         altitudeAccuracy: parseInt(position.coords.altitudeAccuracy, 10),
       };
@@ -92,6 +94,7 @@ const API = {
 
     // Callback if geolocation fails
     const onError = (err = {}) => {
+      Log(`GPS: error - ${err.message}`);
       callback && callback(new Error(err.message));
     };
 
