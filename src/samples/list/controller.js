@@ -110,57 +110,6 @@ const API = {
     });
   },
 
-  photoUpload(photo) {
-    Log('Samples:List:Controller: photo upload.');
-
-    // todo: show loader
-    API.createNewSampleWithPhoto('general', photo);
-  },
-
-  photoSelect() {
-    Log('Samples:List:Controller: photo select.');
-
-    radio.trigger('app:dialog', {
-      title: 'Choose a method to upload a photo',
-      buttons: [
-        {
-          title: 'Camera',
-          onClick() {
-            ImageHelp.getImage((entry) => {
-              API.createNewSampleWithPhoto('general', entry.nativeURL);
-            });
-            radio.trigger('app:dialog:hide');
-          },
-        },
-        {
-          title: 'Gallery',
-          onClick() {
-            ImageHelp.getImage((entry) => {
-              API.createNewSampleWithPhoto('general', entry.nativeURL, () => {});
-            }, {
-              sourceType: window.Camera.PictureSourceType.PHOTOLIBRARY,
-              saveToPhotoAlbum: false,
-            });
-            radio.trigger('app:dialog:hide');
-          },
-        },
-      ],
-    });
-  },
-
-  createNewSampleWithPhoto() {
-    Factory.createSampleWithPhoto.apply(this, arguments)
-      .then(sample => sample.save())
-      .then((sample) => {
-        // add to main collection
-        savedSamples.add(sample);
-      })
-      .catch((err) => {
-        Log(err, 'e');
-        radio.trigger('app:dialog:error', err);
-      });
-  },
-
   createNewSample() {
     if (!userModel.hasLogIn()) {
       API.userLoginMessage();
