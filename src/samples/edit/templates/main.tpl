@@ -2,7 +2,7 @@
   <li class="table-view-cell">
     <a id="uid-button">
       <span class="pull-right descript"><%- obj.uid %></span>
-      Our reference: 
+      Our reference
     </a>
   </li>
 
