@@ -74,6 +74,7 @@ export default Marionette.View.extend({
       labRef: sample.get('lab-ref') && StringHelp.limit(sample.get('lab-ref')),
       date: DateHelp.print(sample.get('date'), true),
       country: sample.get('country'),
+      soil: sample.get('depth') && StringHelp.limit(sample.get('depth')),
       site: sample.get('field-name') && StringHelp.limit(sample.get('field-name')),
       laboratory: sample.get('lab-name') && StringHelp.limit(sample.get('lab-name')),
       group_title: group ? group.title : null,

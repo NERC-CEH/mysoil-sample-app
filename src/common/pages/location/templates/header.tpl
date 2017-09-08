@@ -18,7 +18,7 @@
       <% } %>
 
       <label class="media-object pull-left icon icon-address" for="location-name" />
-      <input class="typeahead" type="text" title="set location name" id="location-name" placeholder="Nearest named place" value="<%= obj.locationName %>"/>
+      <input class="typeahead" type="text" title="set location name" id="location-name" placeholder="Farm name or nearest town" value="<%= obj.locationName %>"/>
     </div>
     <% } %>
   </div>

@@ -27,9 +27,11 @@ export default Marionette.View.extend({
       'field-notes': appModel.isAttrLocked('field-notes', sample.get('field-notes')),
     };
 
-    const fieldSize = sample.get('field-size') + 
-      ($.isNumeric(sample.get('field-size')) ? ' ha' : '');
-    
+    let fieldSize = sample.get('field-size');
+    if (fieldSize !== undefined ) {
+      fieldSize += ($.isNumeric(fieldSize) ? ' ha' : '');
+    }
+      
     return {
       id: sample.cid,
       fieldName: sample.get('field-name') && StringHelp.limit(sample.get('field-name')),
