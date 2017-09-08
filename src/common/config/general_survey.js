@@ -296,6 +296,11 @@ const config = {
       attributes['location name'] = 'missing';
     }
 
+    // location type
+    if (!attrs.location_type) {
+      attributes.location_type = 'can\'t be blank';
+    }
+
     // date
     if (!attrs.date) {
       attributes.date = 'missing';
@@ -306,9 +311,37 @@ const config = {
       }
     }
 
-    // location type
-    if (!attrs.location_type) {
-      attributes.location_type = 'can\'t be blank';
+    // laboratory reference requied
+    if (!attrs['lab-ref']) {
+      attributes['Laboratory reference'] = 'missing';
+    }
+
+    // sample type required
+    if (!attrs['sample-type']) {
+      attributes['Sample type'] = 'missing';
+    }
+
+    // sample depth required
+    if (!attrs['depth']) {
+      attributes['Sample depth'] = 'missing';
+    }
+
+    // field size numeric
+    if (attrs['field-size']) {
+      const size = new Number(attrs['field-size']);
+      if (isNaN(size)) {
+        attributes['Field size'] = 'not numeric';
+      }
+    }
+
+    // lab name required
+    if (!attrs['lab-name']) {
+      attributes['Laboratory name'] = 'missing';
+    }
+
+    // client code required
+    if (!attrs['client-code']) {
+      attributes['Client code'] = 'missing';
     }
 
     return [attributes, null, null];

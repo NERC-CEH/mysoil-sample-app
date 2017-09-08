@@ -146,7 +146,7 @@ const API = {
     // it wasn't saved so of course this error
     delete invalids.attributes.saved; // eslint-disable-line
 
-    let missing = '';
+    let missing = 'Please resolve the following problems and then try again: </br>';
     if (invalids.occurrences) {
       _.each(invalids.occurrences, (message, invalid) => {
         missing += `<b>${invalid}</b> - ${message}</br>`;
@@ -159,9 +159,14 @@ const API = {
     }
 
     radio.trigger('app:dialog', {
-      title: 'Sorry',
+      title: 'Validation error',
+      class: 'error',
       body: missing,
-      timeout: 2000,
+      buttons: [{
+        id: 'ok',
+        title: 'OK',
+        onClick: App.regions.getRegion('dialog').hide,
+      }],
     });
   },
 
