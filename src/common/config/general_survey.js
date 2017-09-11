@@ -142,7 +142,7 @@ const config = {
     },
 
     'land-use': {
-      label: 'Select the rotaional land use.',
+      label: 'Select the rotational land use.',
       id: 43,
       values: {
         'Cropping - combinable crops': 239,
