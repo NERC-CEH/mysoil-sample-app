@@ -41,7 +41,7 @@
     }
 
     .leaflet-control-container .leaflet-top {
-      top: 95px;
+      top: 140px;
     }
 
     &.hiddenName {
@@ -96,26 +96,6 @@
   font-size: $text-font-size;
   color: $color-gray-dark;
 }
-
-input#grid-ref {
-  text-transform: uppercase;
-}
-input#grid-ref {
-  text-transform: uppercase;
-}
-input#grid-ref::-webkit-input-placeholder { /* WebKit browsers */
-  text-transform: none;
-}
-input#grid-ref:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-  text-transform: none;
-}
-input#grid-ref::-moz-placeholder { /* Mozilla Firefox 19+ */
-  text-transform: none;
-}
-input#grid-ref:-ms-input-placeholder { /* Internet Explorer 10+ */
-  text-transform: none;
-}
-
 
 #user-locations .table-view-cell {
   @include empty-list();
@@ -219,6 +199,13 @@ input#grid-ref:-ms-input-placeholder { /* Internet Explorer 10+ */
       margin-right: -2%;
     }
     
+    #location-gridref-row {
+      height: auto;
+      button.lock-btn {
+        height: 100%;
+      }
+    }
+
     #location-name-row {
       overflow: initial;
       span {
@@ -231,7 +218,7 @@ input#grid-ref:-ms-input-placeholder { /* Internet Explorer 10+ */
 #back-btn {
   background-color: $color-main;
   margin: -1 10 0 -2%;
-  height: 45px;
+  height: 94px;
   color: $color-white;
   width: 55px;
 
@@ -272,13 +259,11 @@ button.lock-btn {
   }
 }
 input#location-gridref {
-  text-transform: uppercase;
+  &[data-source='gps'] {
+    color: $color-green
+  }
+  &[data-gr-error='error'] {
+    color: $color-orange;
+  }
 }
 
-input#location-gridref[data-source='gps'] {
-  color: $color-green
-}
-
-input#location-gridref[data-gr-error='error'] {
-  color: $color-orange;
-}

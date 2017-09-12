@@ -165,6 +165,11 @@ const HeaderView = Marionette.View.extend({
 
     $GR.val(value);
     $GR.attr('data-source', location.source);
+
+    // update accuracy similarly
+    const $accuracy = this.$el.find('#location-accuracy');
+    value = location.accuracy;
+    $accuracy.text = value;
   },
 
   updateLocks() {
@@ -211,7 +216,11 @@ const HeaderView = Marionette.View.extend({
     const appModel = this.model.get('appModel');
     const location = this._getCurrentLocation();
     let value = location.gridref;
-
+    let accuracy = location.accuracy;
+    if (accuracy !== undefined) {
+      accuracy += 'm';
+    } 
+    
 
     // avoid testing location.longitude as this can validly be zero within the UK
     if ((!appModel.get('useGridRef') || !value) && location.latitude) {
@@ -228,6 +237,7 @@ const HeaderView = Marionette.View.extend({
       hideLocks: this.options.hideLocks,
       disableLocationLock,
       locationName: location.name,
+      locationAccuracy: accuracy,
       value,
       locationLocked,
       nameLocked,
