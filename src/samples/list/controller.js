@@ -59,16 +59,6 @@ const API = {
       radio.trigger('samples:edit:attr', childView.model.cid, attr);
     });
 
-    mainView.on('childview:taxon:add', (childView) => {
-      const sample = childView.model;
-      radio.trigger('samples:edit:attr', sample.cid, 'taxon', {
-        onSuccess(taxon, editButtonClicked) {
-          API.setTaxon(sample, taxon, editButtonClicked);
-        },
-        showEditButton: true,
-      });
-    });
-
     mainView.on('childview:sample:delete', (childView) => {
       API.sampleDelete(childView.model);
     });
@@ -124,26 +114,6 @@ const API = {
         radio.trigger('samples:edit', sample.cid, { replace: true });
       });
     }
-  },
-
-  /**
-   * Sets a new taxon to an occurrence created by a photo-first method.
-   * @param sample
-   * @param taxon
-   * @param editButtonClicked
-   * @returns {*}
-   */
-  setTaxon(sample, taxon, editButtonClicked) {
-    sample.getOccurrence().set('taxon', taxon);
-    // return to previous - edit page
-    return sample.save().then(() => {
-      if (editButtonClicked) {
-        radio.trigger('samples:edit', sample.cid, { replace: true });
-      } else {
-        // return back to list page
-        window.history.back();
-      }
-    });
   },
 
   /**
