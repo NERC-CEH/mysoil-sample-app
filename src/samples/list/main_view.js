@@ -44,7 +44,7 @@ const SampleView = Marionette.View.extend({
 
     const items = [];
 
-    this.model.getOccurrence().media.each((image) => {
+    this.model.media.each((image) => {
       items.push({
         src: image.getURL(),
         w: image.get('width') || 800,
