@@ -103,6 +103,7 @@ const API = {
   createNewSample() {
     if (!userModel.hasLogIn()) {
       API.userLoginMessage();
+      radio.trigger('user:login');
     }
     else {
       Factory.createSample()
@@ -117,7 +118,7 @@ const API = {
   },
 
   /**
-   * Notify the user why the there are no activities.
+   * Notify the user why they are being redirected.
    */
   userLoginMessage() {
     radio.trigger('app:dialog', {
