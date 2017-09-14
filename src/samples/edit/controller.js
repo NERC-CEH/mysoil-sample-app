@@ -127,11 +127,6 @@ const API = {
     delete invalids.attributes.saved; // eslint-disable-line
 
     let missing = 'Please resolve the following problems and then try again: </br>';
-    if (invalids.occurrences) {
-      _.each(invalids.occurrences, (message, invalid) => {
-        missing += `<b>${invalid}</b> - ${message}</br>`;
-      });
-    }
     if (invalids.attributes) {
       _.each(invalids.attributes, (message, invalid) => {
         missing += `<b>${invalid}</b> - ${message}</br>`;
