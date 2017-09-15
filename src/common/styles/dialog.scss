@@ -93,6 +93,13 @@
     overflow: auto;
     overflow-x: hidden;
   }
+
+  .highlight {
+    display: block;
+    font-weight: bold;
+    font-size: $button-font-size;
+    text-align: center;
+  }
 }
 
 .dialog-buttons {

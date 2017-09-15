@@ -102,17 +102,21 @@ const API = {
 
   createNewSample() {
     if (!userModel.hasLogIn()) {
+      // Tell user they must be logged in.
       API.userLoginMessage();
+      // Show login page.
       radio.trigger('user:login');
     }
     else {
       Factory.createSample()
       .then(sample => sample.save())
       .then((sample) => {
-        // add to main collection
+        // Add to main collection.
         savedSamples.add(sample);
-
+        // Show sample-edit page
         radio.trigger('samples:edit', sample.cid, { replace: true });
+        // Show 'our reference' dialog.
+        API.ourRefMessage(sample.get('uid'));
       });
     }
   },
@@ -124,6 +128,22 @@ const API = {
     radio.trigger('app:dialog', {
       title: 'Information',
       body: 'Please log in to the app before adding a record.',
+      buttons: [{
+        id: 'ok',
+        title: 'OK',
+        onClick: App.regions.getRegion('dialog').hide,
+      }],
+    });
+  },
+
+  /**
+   * Notify the user why they are being redirected.
+   */
+  ourRefMessage(uid) {
+    radio.trigger('app:dialog', {
+      title: 'Our reference',
+      body: 'Please label the sample with our reference:' +
+          '<span class="highlight">' + uid + '</span>',
       buttons: [{
         id: 'ok',
         title: 'OK',
