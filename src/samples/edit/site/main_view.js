@@ -15,6 +15,11 @@ export default Marionette.View.extend({
     const sample = this.model.get('sample');
     const appModel = this.model.get('appModel');
 
+    let fieldSize = sample.get('field-size');
+    if (fieldSize !== undefined ) {
+      fieldSize += ($.isNumeric(fieldSize) ? ' ha' : '');
+    }
+      
     const attrLocks = {
       'field-name': appModel.isAttrLocked('field-name', sample.get('field-name')),
       'field-size': appModel.isAttrLocked('field-size', sample.get('field-size')),
@@ -27,11 +32,11 @@ export default Marionette.View.extend({
       'field-notes': appModel.isAttrLocked('field-notes', sample.get('field-notes')),
     };
 
-    let fieldSize = sample.get('field-size');
-    if (fieldSize !== undefined ) {
-      fieldSize += ($.isNumeric(fieldSize) ? ' ha' : '');
-    }
-      
+    const validationError = sample.metadata.validationError;
+    const attrErrors = validationError ? {
+      'field-size': validationError.attributes['field-size'],
+    } : {};
+
     return {
       id: sample.cid,
       fieldName: sample.get('field-name') && StringHelp.limit(sample.get('field-name')),
@@ -44,6 +49,7 @@ export default Marionette.View.extend({
       habitat: sample.get('habitat') && StringHelp.limit(sample.get('habitat')),
       fieldNotes: sample.get('field-notes') && StringHelp.limit(sample.get('field-notes')),
       locks: attrLocks,
+      errors: attrErrors,
     };
   },
 });

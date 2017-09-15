@@ -31,13 +31,6 @@ let Sample = Indicia.Sample.extend({ // eslint-disable-line
 
   // warehouse attribute keys
   keys() {
-    if (this.metadata.survey === 'plant') {
-      return _.extend(
-        {},
-        CONFIG.indicia.surveys.general.sample, // general keys
-        CONFIG.indicia.surveys.plant.sample // plant specific keys
-      );
-    }
     return CONFIG.indicia.surveys.general.sample;
   },
 
@@ -105,10 +98,18 @@ let Sample = Indicia.Sample.extend({ // eslint-disable-line
 
     this.metadata.saved = true;
 
+    // Note: this extends Indicia.Sample which extends Backbone.Model.
+    // isValid() is a backbone method calling validate() which is provided
+    // by IndiciaSample. isValid(), undocumented by Backbone, passes options
+    // to validate(). The remote option results in this.validateRemote() 
+    // being called, found above.
     if (!this.isValid({ remote: true })) {
       // since the sample was invalid and so was not saved
       // we need to revert it's status
       this.metadata.saved = false;
+      // Preserve the validation errors as this.validationError is reset
+      // each time a Backbone Model is loaded.
+      this.metadata.validationError = this.validationError;
       return false;
     }
 

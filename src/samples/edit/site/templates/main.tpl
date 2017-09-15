@@ -10,7 +10,11 @@
   <li class="table-view-cell">
     <a href="#samples/<%- obj.id %>/edit/field-size" id="field-size-button"
        class="<%- obj.locks['field-size'] ? 'lock' : 'navigate-right' %>">
+      <% if (obj.errors['field-size']) { %>
+      <span class="media-object pull-right descript error"><%- obj.errors['field-size'] %></span>
+      <% } else { %>
       <span class="media-object pull-right descript"><%- obj.fieldSize %></span>
+      <% } %>
       Field size
     </a>
   </li>

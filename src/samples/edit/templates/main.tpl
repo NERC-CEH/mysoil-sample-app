@@ -17,7 +17,11 @@
   <li class="table-view-cell">
     <a href="#samples/<%- obj.id %>/edit/lab-ref" id="number-button"
        class="<%- obj.locks['lab-ref'] ? 'lock' : 'navigate-right' %>">
+      <% if (obj.errors['lab-ref']) { %>
+      <span class="media-object pull-right descript error"><%- obj.errors['lab-ref'] %></span>
+      <% } else { %>
       <span class="media-object pull-right descript"><%- obj.labRef %></span>
+      <% } %>
       Lab reference
     </a>
   </li>
@@ -43,15 +47,9 @@
       <span class="media-object pull-right descript error">Location missing</span>
       <% } %>
       <% } %>
-
-      <% if (obj.locationName) { %>
-      <span class="media-object pull-right descript <%- obj.locks['locationName'] ? 'lock' : '' %>""><%= obj.locationName %></span>
-      <% } else { %>
-      <span class="media-object pull-right descript error">Name missing</span>
-      <% } %>
-
       Location
     </a>
+
   </li>
   <li class="table-view-cell">
     <a href="#samples/<%- obj.id %>/edit/country" id="country-button"
@@ -64,7 +62,11 @@
   <li class="table-view-cell">
     <a href="#samples/<%- obj.id %>/edit/soil" id="soil-button" 
       class="navigate-right">
-      <span class="media-object pull-right descript"><%= obj.soil %></span>
+       <% if (obj.errors['soil']) { %>
+      <span class="media-object pull-right descript error">Error</span>
+      <% } else { %>
+      <span class="media-object pull-right descript"><%- obj.soil %></span>
+      <% } %>
       Soil
     </a>
   </li>
@@ -72,7 +74,11 @@
   <li class="table-view-cell">
     <a href="#samples/<%- obj.id %>/edit/site" id="site-button" 
       class="navigate-right">
-      <span class="media-object pull-right descript"><%= obj.site %></span>
+       <% if (obj.errors['site']) { %>
+      <span class="media-object pull-right descript error">Error</span>
+      <% } else { %>
+      <span class="media-object pull-right descript"><%- obj.site %></span>
+      <% } %>
       Site
     </a>
   </li>
@@ -80,7 +86,11 @@
   <li class="table-view-cell">
     <a href="#samples/<%- obj.id %>/edit/laboratory" id="laboratory-button" 
       class="navigate-right">
-      <span class="media-object pull-right descript"><%= obj.laboratory %></span>
+       <% if (obj.errors['laboratory']) { %>
+      <span class="media-object pull-right descript error">Error</span>
+      <% } else { %>
+      <span class="media-object pull-right descript"><%- obj.laboratory %></span>
+      <% } %>
       Laboratory
     </a>
   </li>

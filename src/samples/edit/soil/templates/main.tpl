@@ -2,7 +2,11 @@
   <li class="table-view-cell">
     <a href="#samples/<%- obj.id %>/edit/depth" id="depth-button"
        class="<%- obj.locks['depth'] ? 'lock' : 'navigate-right' %>">
+      <% if (obj.errors['depth']) { %>
+      <span class="media-object pull-right descript error"><%- obj.errors['depth'] %></span>
+      <% } else { %>
       <span class="media-object pull-right descript"><%- obj.depth %></span>
+      <% } %>
       Sample depth
     </a>
   </li>
@@ -10,7 +14,11 @@
   <li class="table-view-cell">
     <a href="#samples/<%- obj.id %>/edit/sample-type" id="sample-type-button"
        class="<%- obj.locks['sample-type'] ? 'lock' : 'navigate-right' %>">
+      <% if (obj.errors['sample-type']) { %>
+      <span class="media-object pull-right descript error"><%- obj.errors['sample-type'] %></span>
+      <% } else { %>
       <span class="media-object pull-right descript"><%- obj.sampleType %></span>
+      <% } %>
       Sample type
     </a>
   </li>

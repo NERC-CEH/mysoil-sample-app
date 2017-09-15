@@ -47,13 +47,6 @@ const API = {
     const mainView = new MainView({
       model: new Backbone.Model({ sample, appModel }),
     });
-    mainView.on('taxon:update', () => {
-      radio.trigger('samples:edit:attr', sampleID, 'taxon', {
-        onSuccess(taxon) {
-          API.updateTaxon(sample, taxon);
-        },
-      });
-    });
     radio.trigger('app:main', mainView);
 
     // HEADER
@@ -62,7 +55,7 @@ const API = {
     });
 
     headerView.on('save', () => {
-      API.save(sample);
+      API.save(sample, mainView);
     });
 
     radio.trigger('app:header', headerView);
@@ -72,7 +65,7 @@ const API = {
     
   },
 
-  save(sample) {
+  save(sample, mainView) {
     Log('Samples:Edit:Controller: save clicked.');
 
     const promise = sample.setToSend();
@@ -81,6 +74,8 @@ const API = {
     if (!promise) {
       const invalids = sample.validationError;
       API.showInvalidsMessage(invalids);
+      // Redraw mainView with errors shown.
+      mainView.render();
       return;
     }
 

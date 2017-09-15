@@ -12,10 +12,6 @@ import './styles.scss';
 export default Marionette.View.extend({
   template: JST['samples/edit/main'],
 
-  triggers: {
-    'click a#species-button': 'taxon:update',
-  },
-
   /**
    * Need to push the main content down due to the subheader
    * @returns {string}
@@ -60,6 +56,14 @@ export default Marionette.View.extend({
       activity: appModel.isAttrLocked('your-ref', sample.get('your-ref')),
     };
 
+    const validationError = sample.metadata.validationError;
+    const attrErrors = validationError ? {
+      'lab-ref': validationError.attributes['lab-ref'],
+      'soil': validationError.attributes['depth'] || validationError.attributes['sample-type'],
+      'site': validationError.attributes['field-size'],
+      'laboratory': validationError.attributes['lab-name'] || validationError.attributes['client-code'],
+    } : {};
+
     // show activity title.
     const group = sample.get('group');
 
@@ -80,6 +84,7 @@ export default Marionette.View.extend({
       group_title: group ? group.title : null,
       group,
       locks: attrLocks,
+      errors: attrErrors,
     };
   },
 });

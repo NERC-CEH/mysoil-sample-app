@@ -290,59 +290,50 @@ const config = {
     // location
     const location = attrs.location || {};
     if (!location.latitude) {
-      attributes.location = 'missing';
-    }
-    // location name
-    if (!location.name) {
-      attributes['location name'] = 'missing';
-    }
-
-    // location type
-    if (!attrs.location_type) {
-      attributes.location_type = 'can\'t be blank';
+      attributes.location = 'Missing';
     }
 
     // date
     if (!attrs.date) {
-      attributes.date = 'missing';
+      attributes.date = 'Missing';
     } else {
       const date = new Date(attrs.date);
       if (date === 'Invalid Date' || date > new Date()) {
-        attributes.date = (new Date(date) > new Date()) ? 'future date' : 'invalid';
+        attributes.date = (new Date(date) > new Date()) ? 'Future date' : 'Invalid';
       }
     }
 
     // laboratory reference requied
     if (!attrs['lab-ref']) {
-      attributes['Laboratory reference'] = 'missing';
+      attributes['lab-ref'] = 'Missing';
     }
 
     // sample type required
     if (!attrs['sample-type']) {
-      attributes['Sample type'] = 'missing';
+      attributes['sample-type'] = 'Missing';
     }
 
     // sample depth required
     if (!attrs['depth']) {
-      attributes['Sample depth'] = 'missing';
+      attributes['depth'] = 'Missing';
     }
 
     // field size numeric
     if (attrs['field-size']) {
       const size = new Number(attrs['field-size']);
       if (isNaN(size)) {
-        attributes['Field size'] = 'not numeric';
+        attributes['field-size'] = 'Not numeric';
       }
     }
 
     // lab name required
     if (!attrs['lab-name']) {
-      attributes['Laboratory name'] = 'missing';
-    }
+      attributes['lab-name'] = 'Missing';
+}
 
     // client code required
     if (!attrs['client-code']) {
-      attributes['Client code'] = 'missing';
+      attributes['client-code'] = 'Missing';
     }
 
     return [attributes, null, null];

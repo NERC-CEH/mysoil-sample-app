@@ -136,6 +136,11 @@ const API = {
       .then(() => {
         // update locked value if attr is locked
         API.updateLock(attr, newVal, currentVal);
+        // clear validationError if set
+        let validationError = sample.metadata.validationError;
+        if (validationError && validationError.attributes[attr]) {
+          delete validationError.attributes[attr];
+        }
         callback();
       })
       .catch((err) => {

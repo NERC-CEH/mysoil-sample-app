@@ -26,6 +26,12 @@ export default Marionette.View.extend({
       'sample-notes': appModel.isAttrLocked('sample-notes', sample.get('sample-notes')),
     };
 
+    const validationError = sample.metadata.validationError;
+    const attrErrors = validationError ? {
+      'depth': validationError.attributes['depth'],
+      'sample-type': validationError.attributes['sample-type'],
+    } : {};
+
     const fieldSize = sample.get('field-size') + 
       ($.isNumeric(sample.get('field-size')) ? ' ha' : '');
     
@@ -40,6 +46,7 @@ export default Marionette.View.extend({
       landUse: sample.get('land-use') && StringHelp.limit(sample.get('land-use')),
       sampleNotes: sample.get('sample-notes') && StringHelp.limit(sample.get('sample-notes')),
       locks: attrLocks,
+      errors: attrErrors,
     };
   },
 });

@@ -19,11 +19,18 @@ export default Marionette.View.extend({
       'client-code': appModel.isAttrLocked('client-code', sample.get('client-code')),
     };
 
+    const validationError = sample.metadata.validationError;
+    const attrErrors = validationError ? {
+      'lab-name': validationError.attributes['lab-name'],
+      'client-code': validationError.attributes['client-code'],
+    } : {};
+
     return {
       id: sample.cid,
       labName: sample.get('lab-name') && StringHelp.limit(sample.get('lab-name')),
       clientCode: sample.get('client-code') && StringHelp.limit(sample.get('client-code')),
       locks: attrLocks,
+      errors: attrErrors,
     };
   },
 });
