@@ -3,6 +3,7 @@
  *****************************************************************************/
 import $ from 'jquery';
 import Marionette from 'backbone.marionette';
+import Device from 'helpers/device';
 import Validate from 'helpers/validate';
 import JST from 'JST';
 
@@ -10,7 +11,15 @@ export default Marionette.View.extend({
   template: JST['user/register/main'],
 
   events: {
+    'click #user-terms-agree': 'onTermsClicked',
     'click #register-button': 'register',
+  },
+
+  onTermsClicked(e) {
+    // Ratchet Toggles respond to slide and tap but also need click for desktop.
+    if (!Device.isMobile()) {
+      $(e.currentTarget).toggleClass('active');
+    }
   },
 
   register() {
