@@ -22,31 +22,9 @@
 
 <li class="table-view-divider">Location</li>
 <li class="table-view-cell">
-  Use Grid Ref
-  <span class="media-object pull-left icon icon-grid"></span>
-  <div id="use-gridref-btn" data-setting="useGridRef" class="toggle no-yes <%- obj.useGridRef ? 'active' : '' %>">
-    <div class="toggle-handle"></div>
-  </div>
-</li>
-<li id="use-gridmap-btn-parent" class="table-view-cell  <%- obj.useGridRef ? '' : 'disabled' %>">
-  Show Map Grid
-  <span class="media-object pull-left icon icon-grid"></span>
-  <div id="use-gridmap-btn" data-setting="useGridMap"
-       class="toggle no-yes <%- obj.useGridMap ? 'active' : '' %>">
-    <div class="toggle-handle"></div>
-  </div>
-</li>
-<li class="table-view-cell">
   <a href="#settings/locations" class="navigate-right">
     <span class="media-object pull-left icon icon-location"></span>
     Manage Saved
-  </a>
-</li>
-<li class="table-view-cell">
-  <a href="#settings/survey" class="navigate-right">
-    <span class="media-object pull-left icon icon-grid"></span>
-    <span class="media-object pull-right descript" style="width: 25%;"><%= obj.gridSquareUnit %></span>
-    Grid Square Unit
   </a>
 </li>
 
