@@ -1,9 +1,9 @@
 <div class="info-message">
   <p>This record has been submitted and cannot be edited within this App.
     <% if (obj.id) { %>
-    <a href="<%= obj.site_url %>/record-details?sample_id=<%= obj.id %>"
+    <a href="<%= obj.site_url %>/poc-user-edit?sample_id=<%= obj.id %>"
        class="btn btn-block btn-narrow">
-      View on mySoil Sample
+      Edit on mySoil Sample
       <span class="pull-right icon icon-link-ext"></span>
     </a>
     <% } else { %>
