@@ -114,7 +114,7 @@ const API = {
         // Add to main collection.
         savedSamples.add(sample);
         // Show sample-edit page
-        radio.trigger('samples:edit', sample.cid, { replace: true });
+        radio.trigger('samples:edit', sample.cid);
         // Show 'our reference' dialog.
         API.ourRefMessage(sample.get('uid'));
       });
