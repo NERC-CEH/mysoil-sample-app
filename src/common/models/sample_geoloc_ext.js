@@ -10,6 +10,32 @@ import Log from 'helpers/log';
 import LocHelp from 'helpers/location';
 import appModel from 'app_model';
 
+export function updateSampleLocation(sample, location) {
+  return new Promise((resolve, reject) => {
+    const newLocation = Object.assign({}, location);
+    newLocation.source = 'gps';
+    newLocation.updateTime = new Date(); // track when gps was acquired
+    newLocation.gridref = LocHelp.locationToGrid(newLocation);
+
+    // extend old location to preserve its previous attributes like name or id
+    const oldLocation = sample.get('location');
+    const fullLocation = $.extend(oldLocation, newLocation);
+
+    if (sample.setGPSLocation) {
+      const locationIsUpdatedPromise = sample.setGPSLocation(fullLocation);
+      if (locationIsUpdatedPromise) {
+        locationIsUpdatedPromise.then(() => resolve(true));
+      } else {
+        resolve(false);
+      }
+      return;
+    }
+
+    sample.set('location', fullLocation);
+    sample.save().then(() => resolve(true));
+  });
+}
+
 const extension = {
   startGPS(accuracyLimit) {
     Log('SampleModel:GPS: start.');
@@ -17,6 +43,7 @@ const extension = {
     const that = this;
     const options = {
       accuracyLimit,
+
       onUpdate(location) {
         // Called when GPS returns value of insufficient accuracy.
         Log('SampleModel:GPS: onUpdate.');
@@ -24,10 +51,9 @@ const extension = {
         that.trigger('geolocation:update', location);
       },
 
-      callback(error, loc) {
+      callback(error, location) {
         // Called on accurate GPS location or error.
         Log('SampleModel:GPS: callback.');
-        let location = loc;
         extension.stopGPS.call(that, { silent: true });
 
         if (error) {
@@ -36,32 +62,23 @@ const extension = {
           return;
         }
 
-        location.source = 'gps';
-        location.updateTime = new Date(); // track when gps was acquired
-        location.gridref = LocHelp.locationToGrid(location);
-
-        // extend old location to preserve its previous attributes like name or id
-        const oldLocation = that.get('location');
-        location = $.extend(oldLocation, location);
-
-        if (that.setGPSLocation) {
-          if (that.setGPSLocation(location)) {
-            that.trigger('change:location');
-            that.trigger('geolocation', location);
-            that.trigger('geolocation:success', location);
-          }
-          return;
-        }
-
-        that.trigger('change:location');
-        that.trigger('geolocation', location);
-        that.trigger('geolocation:success', location);
+        updateSampleLocation(that, location)
+          .then(locationWasSet => {
+            if (locationWasSet) {
+              that.trigger('change:location');
+              that.trigger('geolocation', location);
+              that.trigger('geolocation:success', location);
+            }
+          })
+          .catch(error => {
+            that.trigger('geolocation:error', error);
+          });
       },
     };
 
     this.locating = GPS.start(options);
-    that.trigger('geolocation');
-    that.trigger('geolocation:start');
+    this.trigger('geolocation');
+    this.trigger('geolocation:start');
   },
 
   stopGPS(options = {}) {
@@ -91,4 +108,3 @@ const extension = {
 };
 
 export { extension as default };
-
