@@ -224,7 +224,7 @@ header .subtitle {
 
   .activity {
     color: $color-white;
-    background-color: $color-main-dark;
+    background-color: $color-blue-dark;
   }
 
   .surveys {
@@ -236,11 +236,6 @@ header .subtitle {
     color: $color-white;
     background-color: $color-black;
   }
-}
-
-// take into account iOS info header
-body.ios header #subheader {
-  margin-top: 18px;
 }
 
 // content bands
