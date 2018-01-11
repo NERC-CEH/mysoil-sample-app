@@ -29,6 +29,9 @@ const CONFIG = {
   // E.g. Heroku sets NODE_ENV to 'production' by default.
   // use full logging if not production
   log: process.env.ENV !== 'production',
+  // Karolis (who is more likely to be correct) has
+  // log: process.env.ENV !== 'test',
+  // with the comment 'use prod logging if testing otherwise full log'
 
   // google analytics
   ga: {
