@@ -94,7 +94,7 @@ const config = {
       id: 28,
       values: {
         'Point (single location)': 142,
-        'Field average (e.g. RB209 W)': 143,
+        'Multiple points bulked together (e.g. RB209 W)': 143,
       },
     },
 
