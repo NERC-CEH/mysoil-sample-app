@@ -55,7 +55,7 @@
       <% } else { %>
       <span class="media-object pull-right descript"><%- obj.soil %></span>
       <% } %>
-      Soil
+      Soil data
     </a>
   </li>
 
@@ -67,7 +67,7 @@
       <% } else { %>
       <span class="media-object pull-right descript"><%- obj.site %></span>
       <% } %>
-      Site
+      Site data
     </a>
   </li>
 
@@ -79,7 +79,7 @@
       <% } else { %>
       <span class="media-object pull-right descript"><%- obj.laboratory %></span>
       <% } %>
-      Laboratory
+      Laboratory data
     </a>
   </li>
 

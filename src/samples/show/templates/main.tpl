@@ -47,7 +47,7 @@
     <span class="media-object pull-right descript"><%- obj['structure-notes'] %></span>
     <span class="media-object pull-right descript"><%- obj['land-use'] %></span>
     <span class="media-object pull-right descript"><%- obj['sample-notes'] %></span>
-    Soil
+    Soil data
   </li>
 
   <li class="table-view-cell">
@@ -60,13 +60,13 @@
     <span class="media-object pull-right descript"><%- obj['tillage'] %></span>
     <span class="media-object pull-right descript"><%- obj['habitat'] %></span>
     <span class="media-object pull-right descript"><%- obj['field-notes'] %></span>
-    Site
+    Site data
   </li>
   
   <li class="table-view-cell">
     <span class="media-object pull-right descript"><%- obj['lab-name'] %></span>
     <span class="media-object pull-right descript"><%- obj['client-code'] %></span>
-    Laboratory
+    Laboratory data
   </li>
 
   <% if (obj.group_title) { %>

@@ -48,7 +48,7 @@ const API = {
 
     // HEADER
     const headerView = new HeaderView({
-      model: new Backbone.Model({ title: 'Site' }),
+      model: new Backbone.Model({ title: 'Site data' }),
     });
     radio.trigger('app:header', headerView);
 
