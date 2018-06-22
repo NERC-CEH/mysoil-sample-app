@@ -1,3 +1,10 @@
+<%/*
+Receives an object with the following elements.
+  message - Some text about the attribute.
+  selection - An array of objects, each having a value property.
+  selected - One of the values in selection.
+*/%>
+
 <% if (obj.message) { %>
 <div class="info-message">
   <p><%= obj.message %></p>

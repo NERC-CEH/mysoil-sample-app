@@ -4,12 +4,7 @@
 import $ from 'jquery';
 import Indicia from 'indicia';
 import DateHelp from 'helpers/date';
-import cropsData from 'crops.data';
-
-const crops = {};
-cropsData.forEach((el) => {
-  crops[el.name] = el.id;
-});
+import crops from 'crops.data';
 
 const config = {
   survey_id: 2,
