@@ -57,6 +57,24 @@ export default Marionette.View.extend({
     });
   },
 
+  onRender() {
+    // Open the section of checked input
+    const $checked = this.$el.find('input:checked');
+    const $section = $checked.closest('.radio-section');
+    $section.toggleClass('expanded');
+    const $anchor = $section.prev('.radio-section-head').children('.navigate-right');
+    $anchor.toggleClass('expanded');
+  },
+
+  onDomRefresh() {
+    // Scroll to an open section
+    const $section = this.$el.find('.radio-section.expanded');
+    if ($section.length > 0) {
+      // Allow for height of info message (50px) and section-head (56px).
+      $('#main').scrollTop($section.offset().top - 106);
+    }
+  },
+
   getValues() {
     let values;
     const that = this;
@@ -82,9 +100,19 @@ export default Marionette.View.extend({
   },
 
   toggleSection(e) {
-    let $anchor = $(e.target);
+    // Close an open section first.
+    let $section = this.$el.find('.radio-section.expanded');
+    $section.toggleClass('expanded');
+    let $anchor = $section.prev('.radio-section-head').children('.navigate-right');
     $anchor.toggleClass('expanded');
-    let $section = $anchor.parent().next('.radio-section');
-    $section.toggle();
+    if ($anchor.get(0) !== e.target) {
+      // Expand the selected section if different from the one just closed.
+      $anchor = $(e.target);
+      $anchor.toggleClass('expanded');
+      $section = $anchor.parent().next('.radio-section');
+      $section.toggleClass('expanded');
+      // Scroll to show section contents.
+      $('#main').scrollTop($section.offset().top - 106);
+    }
   }
 });

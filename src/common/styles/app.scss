@@ -790,6 +790,13 @@ header .pull-right {
 
 // Sectioned list of radio inputs.
 .radio-section-head {
+  padding: 0;
+  .navigate-right {
+    display: block;
+    padding: 16px;
+    color: $button-black;
+    cursor: pointer;
+  }
   .navigate-right:after {
     // A + icon to indicate a section can expand.
     content: '\e804';
@@ -801,5 +808,13 @@ header .pull-right {
 }
 
 .radio-section {
+  // Hide section
   display: none;
+  &.expanded {
+    // Show section when given the class expanded.
+    display: block;
+  }
+  .item-content {
+    margin-left: 32px;
+  }
 }
