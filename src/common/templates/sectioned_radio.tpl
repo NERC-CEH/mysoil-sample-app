@@ -11,11 +11,23 @@ Receives an object with the following elements.
 </div>
 <% } %>
 
+<% let sectionOpen = false; %>
 <% obj.selection.forEach((option) => { %>
   <% if (option.section) { %>
-    <div class="item-content">
-      <%= option.section %>
+
+    <% if (sectionOpen) { %>
     </div>
+    <% } %>
+
+    <div class="item radio-section-head">
+      <a class="navigate-right">
+        <%= option.section %>
+      </a>
+    </div>
+
+    <div class="radio-section">
+    <% sectionOpen = true; %>
+
   <% } else { %>
     <label class="item item-radio">
       <input type="radio" name="group" value="<%= option.value %>" <%- option.value === obj.selected ? 'checked' : ''%>>
@@ -28,3 +40,4 @@ Receives an object with the following elements.
     </label>
   <% } %>
 <% }) %>
+</div>

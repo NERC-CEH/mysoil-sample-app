@@ -13,6 +13,10 @@ export default Marionette.View.extend({
     'click input[type="radio"]': 'save',
   },
 
+  events: {
+    'click a': 'toggleSection'
+  },
+
 
   initialize() {
     const config = this.options.config || {};
@@ -76,4 +80,11 @@ export default Marionette.View.extend({
       $(elem).prop('checked', false);
     });
   },
+
+  toggleSection(e) {
+    let $anchor = $(e.target);
+    $anchor.toggleClass('expanded');
+    let $section = $anchor.parent().next('.radio-section');
+    $section.toggle();
+  }
 });

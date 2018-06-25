@@ -787,3 +787,19 @@ header .pull-right {
 .table-view .media-object.pull-left {
   margin-right: 15px;
 }
+
+// Sectioned list of radio inputs.
+.radio-section-head {
+  .navigate-right:after {
+    // A + icon to indicate a section can expand.
+    content: '\e804';
+  }
+  .navigate-right.expanded:after {
+    // A - icon to indicate a section can contract.
+    content: '\e81c';
+  }
+}
+
+.radio-section {
+  display: none;
+}
