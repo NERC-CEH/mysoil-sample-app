@@ -1,6 +1,6 @@
 <ul class="table-view">
   <li>
-    <p>The mySoil-Sample App has been developed for recording information in the
+    <p>The iRecord Soil App has been developed for recording information in the
       field as soil samples are taken. It is aimed at the agricultural industry
       where, in the UK alone, over half a million samples are taken annually. It
       replaces the use of paper forms and, importantly, adds a precise geolocation

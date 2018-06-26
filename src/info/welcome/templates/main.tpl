@@ -4,7 +4,7 @@
       <div class="swap first">
         <div class="message">
           <h2>Welcome</h2>
-          <p><b>mySoil Sample</b> is a platform for recording and managing
+          <p><b>iRecord Soil</b> is a platform for recording and managing
             soil sample data.
             Learn more by swiping left.</p>
         </div>
