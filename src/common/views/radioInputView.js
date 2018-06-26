@@ -70,8 +70,8 @@ export default Marionette.View.extend({
     // Scroll to an open section
     const $section = this.$el.find('.radio-section.expanded');
     if ($section.length > 0) {
-      // Allow for height of info message (50px) and section-head (56px).
-      $('#main').scrollTop($section.offset().top - 106);
+      // Allow for height of info message (50px) and header (44px).
+      $('#main').scrollTop($section.offset().top - 94);
     }
   },
 
@@ -112,7 +112,8 @@ export default Marionette.View.extend({
       $section = $anchor.parent().next('.radio-section');
       $section.toggleClass('expanded');
       // Scroll to show section contents.
-      $('#main').scrollTop($section.offset().top - 106);
+      const $main = $('#main');
+      $main.scrollTop($main.scrollTop() + $section.offset().top - 94);
     }
   }
 });
