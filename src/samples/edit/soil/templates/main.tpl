@@ -7,7 +7,7 @@
       <% } else { %>
       <span class="media-object pull-right descript"><%- obj.depth %></span>
       <% } %>
-      Sample depth
+      <%- obj.titles['depth'] %>
     </a>
   </li>
 
@@ -19,7 +19,7 @@
       <% } else { %>
       <span class="media-object pull-right descript"><%- obj.sampleType %></span>
       <% } %>
-      Sample type
+      <%- obj.titles['sample-type'] %>
     </a>
   </li>
 
@@ -27,7 +27,7 @@
     <a href="#samples/<%- obj.id %>/edit/soil-type" id="soil-type-button"
        class="<%- obj.locks['soil-type'] ? 'lock' : 'navigate-right' %>">
       <span class="media-object pull-right descript"><%= obj.soilType %></span>
-      Soil type
+      <%- obj.titles['soil-type'] %>
     </a>
   </li>
 
@@ -35,7 +35,7 @@
     <a href="#samples/<%- obj.id %>/edit/calcareous" id="calcareous-button"
        class="<%- obj.locks['calcareous'] ? 'lock' : 'navigate-right' %>">
       <span class="media-object pull-right descript"><%= obj.calcareous %></span>
-      Calcareous soil
+      <%- obj.titles['calcareous'] %>
     </a>
   </li>
 
@@ -43,7 +43,7 @@
     <a href="#samples/<%- obj.id %>/edit/structure-score" id="structure-score-button"
        class="<%- obj.locks['structure-score'] ? 'lock' : 'navigate-right' %>">
       <span class="media-object pull-right descript"><%= obj.structureScore %></span>
-      Structure score
+      <%- obj.titles['structure-score'] %>
     </a>
   </li>
 
@@ -51,7 +51,7 @@
     <a href="#samples/<%- obj.id %>/edit/structure-notes" id="structure-notes-button"
        class="<%- obj.locks['structure-notes'] ? 'lock' : 'navigate-right' %>">
       <span class="media-object pull-right descript"><%= obj.structureNotes %></span>
-      Structure notes
+      <%- obj.titles['structure-notes'] %>
     </a>
   </li>
 
@@ -59,7 +59,7 @@
     <a href="#samples/<%- obj.id %>/edit/land-use" id="land-use-button"
        class="<%- obj.locks['land-use'] ? 'lock' : 'navigate-right' %>">
       <span class="media-object pull-right descript"><%= obj.landUse %></span>
-      Land use
+      <%- obj.titles['land-use'] %>
     </a>
   </li>
   
@@ -67,7 +67,7 @@
     <a href="#samples/<%- obj.id %>/edit/sample-notes" id="sample-notes-button"
        class="<%- obj.locks['sample-notes'] ? 'lock' : 'navigate-right' %>">
       <span class="media-object pull-right descript"><%= obj.sampleNotes %></span>
-      Sample notes
+      <%- obj.titles['sample-notes'] %>
     </a>
   </li>
 </ul>

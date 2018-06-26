@@ -8,7 +8,7 @@
       <% } else { %>
       <span class="media-object pull-right descript"><%- obj.labName %></span>
       <% } %>
-      Name
+      <%- obj.titles['lab-name'] %>
     </a>
   </li>
   <li class="table-view-cell">
@@ -19,7 +19,7 @@
       <% } else { %>
       <span class="media-object pull-right descript"><%- obj.clientCode %></span>
       <% } %>
-      Client code
+      <%- obj.titles['client-code'] %>
     </a>
   </li>
 </ul>

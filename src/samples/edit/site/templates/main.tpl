@@ -3,7 +3,7 @@
     <a href="#samples/<%- obj.id %>/edit/field-name" id="field-name-button"
        class="<%- obj.locks['field-name'] ? 'lock' : 'navigate-right' %>">
       <span class="media-object pull-right descript"><%- obj.fieldName %></span>
-      Field name
+      <%- obj.titles['field-name'] %>
     </a>
   </li>
 
@@ -15,7 +15,7 @@
       <% } else { %>
       <span class="media-object pull-right descript"><%- obj.fieldSize %></span>
       <% } %>
-      Field size
+      <%- obj.titles['field-size'] %>
     </a>
   </li>
 
@@ -23,7 +23,7 @@
     <a href="#samples/<%- obj.id %>/edit/crop-present" id="crop-present-button"
        class="<%- obj.locks['crop-present'] ? 'lock' : 'navigate-right' %>">
       <span class="media-object pull-right descript"><%= obj.cropPresent %></span>
-      Crop, present
+      <%- obj.titles['crop-present'] %>
     </a>
   </li>
 
@@ -31,7 +31,7 @@
     <a href="#samples/<%- obj.id %>/edit/crop-future" id="crop-future-button"
        class="<%- obj.locks['crop-future'] ? 'lock' : 'navigate-right' %>">
       <span class="media-object pull-right descript"><%= obj.cropFuture %></span>
-      Crop, future
+      <%- obj.titles['crop-future'] %>
     </a>
   </li>
 
@@ -39,7 +39,7 @@
     <a href="#samples/<%- obj.id %>/edit/straw" id="straw-button"
        class="<%- obj.locks['straw'] ? 'lock' : 'navigate-right' %>">
       <span class="media-object pull-right descript"><%= obj.straw %></span>
-      Straw
+      <%- obj.titles['straw'] %>
     </a>
   </li>
 
@@ -47,7 +47,7 @@
     <a href="#samples/<%- obj.id %>/edit/manure" id="manure-button"
        class="<%- obj.locks['manure'] ? 'lock' : 'navigate-right' %>">
       <span class="media-object pull-right descript"><%= obj.manure %></span>
-      Organic fertiliser
+      <%- obj.titles['manure'] %>
     </a>
   </li>
 
@@ -55,7 +55,7 @@
     <a href="#samples/<%- obj.id %>/edit/tillage" id="tillage-button"
        class="<%- obj.locks['tillage'] ? 'lock' : 'navigate-right' %>">
       <span class="media-object pull-right descript"><%= obj.tillage %></span>
-      Tillage system
+      <%- obj.titles['tillage'] %>
     </a>
   </li>
 
@@ -63,7 +63,7 @@
     <a href="#samples/<%- obj.id %>/edit/habitat" id="habitat-button"
        class="<%- obj.locks['habitat'] ? 'lock' : 'navigate-right' %>">
       <span class="media-object pull-right descript"><%= obj.habitat %></span>
-      Broad habitat
+      <%- obj.titles['habitat'] %>
     </a>
   </li>
   
@@ -71,7 +71,7 @@
     <a href="#samples/<%- obj.id %>/edit/field-notes" id="field-notes-button"
        class="<%- obj.locks['field-notes'] ? 'lock' : 'navigate-right' %>">
       <span class="media-object pull-right descript"><%= obj.fieldNotes %></span>
-      Field notes
+      <%- obj.titles['field-notes'] %>
     </a>
   </li>
 </ul>

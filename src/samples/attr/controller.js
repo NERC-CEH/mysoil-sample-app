@@ -4,6 +4,7 @@
 import Backbone from 'backbone';
 import Indicia from 'indicia';
 import Log from 'helpers/log';
+import CONFIG from 'config';
 import DateHelp from 'helpers/date';
 import radio from 'radio';
 import appModel from 'app_model';
@@ -54,6 +55,7 @@ const API = {
       onLockClick: API.onLockClick,
     });
 
+    const attrConfig = CONFIG.indicia.surveys.general.sample[attr];
     const headerView = new HeaderView({
       onExit() {
         API.onExit(mainView, sample, attr, () => {
@@ -61,7 +63,7 @@ const API = {
         });
       },
       rightPanel: lockView,
-      model: new Backbone.Model({ title: attr }),
+      model: new Backbone.Model({ title: attrConfig.title }),
     });
 
     radio.trigger('app:header', headerView);

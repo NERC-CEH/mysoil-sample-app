@@ -2,7 +2,7 @@
  * Sample Edit Site main view.
  *****************************************************************************/
 import Marionette from 'backbone.marionette';
-import Indicia from 'indicia';
+import CONFIG from 'config';
 import JST from 'JST';
 import StringHelp from 'helpers/string';
 import $ from 'jquery';
@@ -32,6 +32,19 @@ export default Marionette.View.extend({
       'field-notes': appModel.isAttrLocked('field-notes', sample.get('field-notes')),
     };
 
+    const sampleConfig = CONFIG.indicia.surveys.general.sample;
+    const attrTitles = {
+      'field-name': sampleConfig['field-name'].title,
+      'field-size': sampleConfig['field-size'].title,
+      'crop-present': sampleConfig['crop-present'].title,
+      'crop-future': sampleConfig['crop-future'].title,
+      'straw': sampleConfig['straw'].title,
+      'manure': sampleConfig['manure'].title,
+      'tillage': sampleConfig['tillage'].title,
+      'habitat': sampleConfig['habitat'].title,
+      'field-notes': sampleConfig['field-notes'].title,
+    };
+
     const validationError = sample.metadata.validationError;
     const attrErrors = validationError ? {
       'field-size': validationError.attributes['field-size'],
@@ -50,6 +63,7 @@ export default Marionette.View.extend({
       fieldNotes: sample.get('field-notes') && StringHelp.limit(sample.get('field-notes')),
       locks: attrLocks,
       errors: attrErrors,
+      titles: attrTitles,
     };
   },
 });

@@ -2,7 +2,7 @@
  * Sample Edit Site main view.
  *****************************************************************************/
 import Marionette from 'backbone.marionette';
-import Indicia from 'indicia';
+import CONFIG from 'config';
 import JST from 'JST';
 import StringHelp from 'helpers/string';
 import $ from 'jquery';
@@ -26,6 +26,18 @@ export default Marionette.View.extend({
       'sample-notes': appModel.isAttrLocked('sample-notes', sample.get('sample-notes')),
     };
 
+    const sampleConfig = CONFIG.indicia.surveys.general.sample;
+    const attrTitles = {
+      'depth': sampleConfig['depth'].title,
+      'sample-type': sampleConfig['sample-type'].title,
+      'soil-type': sampleConfig['soil-type'].title,
+      'calcareous': sampleConfig['calcareous'].title,
+      'structure-score': sampleConfig['structure-score'].title,
+      'structure-notes': sampleConfig['structure-notes'].title,
+      'land-use': sampleConfig['land-use'].title,
+      'sample-notes': sampleConfig['sample-notes'].title,
+    };
+
     const validationError = sample.metadata.validationError;
     const attrErrors = validationError ? {
       'depth': validationError.attributes['depth'],
@@ -47,6 +59,7 @@ export default Marionette.View.extend({
       sampleNotes: sample.get('sample-notes') && StringHelp.limit(sample.get('sample-notes')),
       locks: attrLocks,
       errors: attrErrors,
+      titles: attrTitles,
     };
   },
 });

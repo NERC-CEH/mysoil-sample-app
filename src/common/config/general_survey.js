@@ -48,7 +48,14 @@ const config = {
 
     uid: { id: 35 },
 
+    'your-ref': {
+      title: 'Your reference',
+      label: 'Add your own reference, if you wish, to help identify the sample.',
+      id: 24,
+    },
+
     country: {
+      title: 'Country',
       label: 'Please pick the country where you are working.',
       id: 21,
       values: {
@@ -59,22 +66,8 @@ const config = {
       },
     },
 
-    'your-ref': {
-      label: 'Add your own reference, if you wish, to help identify the sample.',
-      id: 24,
-    },
-
-    'field-name': {
-      label: 'Enter the field name.',
-      id: 25,
-    },
-
-    'field-size': {
-      label: 'Enter the field size in hectares.',
-      id: 26,
-    },
-
     'depth': {
+      title: 'Sample depth',
       label: 'Select the sample depth.',
       id: 27,
       values: {
@@ -85,6 +78,7 @@ const config = {
     },
 
     'sample-type': {
+      title: 'Sample type',
       label: 'Select the sample type.',
       id: 28,
       values: {
@@ -94,6 +88,7 @@ const config = {
     },
 
     'soil-type': {
+      title: 'Soil type',
       label: 'Select the soil type.',
       id: 29,
       values: {
@@ -106,6 +101,7 @@ const config = {
     },
 
     'calcareous': {
+      title: 'Calcareous soil',
       label: 'Select whether your soil is on chalk or limestone.',
       id: 45,
       values: {
@@ -115,6 +111,7 @@ const config = {
     },
 
     'structure-score': {
+      title: 'Structure score',
       label: 'Select the structure score (VESS).',
       id: 44,
       values: {
@@ -127,11 +124,13 @@ const config = {
     },
 
     'structure-notes': {
+      title: 'Structure notes',
       label: 'Add any notes relating to soil structure.',
       id: 48,
     },
 
     'land-use': {
+      title: 'Land use',
       label: 'Select the rotational land use.',
       id: 43,
       values: {
@@ -145,23 +144,39 @@ const config = {
     },
 
     'sample-notes': {
+      title: 'Sample notes',
       label: 'Add any notes relating to the collected sample.',
       id: 50,
     },
 
-    'crop-present': {
+    'field-name': {
+      title: 'Field name',
+      label: 'Enter the field name.',
+      id: 25,
+    },
+
+    'field-size': {
+      title: 'Field size',
+      label: 'Enter the field size in hectares.',
+      id: 26,
+    },
+
+  'crop-present': {
+      title: 'Crop, present',
       label: 'Select the crop present in the field.',
       id: 30,
       values: crops,
     },
 
     'crop-future': {
+      title: 'Crop, future',
       label: 'Select the intended future crop.',
       id: 31,
       values: crops,
     },
 
     'straw': {
+      title: 'Straw',
       label: 'Select whether straw has been removed.',
       id: 32,
       values: {
@@ -171,6 +186,7 @@ const config = {
     },
 
     'manure': {
+      title: 'Organic fertiliser',
       label: 'Select whether organic fertiliser has been added (includes farmyard manure, slurry, sewage sludge, compost).',
       id: 33,
       values: {
@@ -180,6 +196,7 @@ const config = {
     },
 
     'tillage': {
+      title: 'Tillage system',
       label: 'Select the type of tillage system employed.',
       id: 47,
       values: {
@@ -190,6 +207,7 @@ const config = {
     },
 
     'habitat': {
+      title: 'Broad habitat',
       label: 'Select the broad habitat where the sample is being taken.',
       id: 46,
       values: {
@@ -220,11 +238,13 @@ const config = {
     },
 
     'field-notes': {
+      title: 'Field notes',
       label: 'Add any notes relating to field management.',
       id: 49,
     },
 
     'lab-name': {
+      title: 'Name',
       label: 'Select the laboratory that will analyse samples.',
       id: 34,
       values: {
@@ -235,11 +255,13 @@ const config = {
     },
 
     'client-code': {
+      title: 'Client code',
       label: 'Enter your client code for the laboratory.',
       id: 22,
     },
 
     date: {
+      title: 'Date',
       values(date) {
         return DateHelp.print(date);
       },

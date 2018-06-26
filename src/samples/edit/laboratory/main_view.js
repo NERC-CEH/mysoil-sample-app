@@ -2,7 +2,7 @@
  * Sample Edit Laboratory main view.
  *****************************************************************************/
 import Marionette from 'backbone.marionette';
-import Indicia from 'indicia';
+import CONFIG from 'config';
 import JST from 'JST';
 import StringHelp from 'helpers/string';
 
@@ -19,6 +19,12 @@ export default Marionette.View.extend({
       'client-code': appModel.isAttrLocked('client-code', sample.get('client-code')),
     };
 
+    const sampleConfig = CONFIG.indicia.surveys.general.sample;
+    const attrTitles = {
+      'lab-name': sampleConfig['lab-name'].title,
+      'client-code': sampleConfig['client-code'].title,
+    };
+
     const validationError = sample.metadata.validationError;
     const attrErrors = validationError ? {
       'lab-name': validationError.attributes['lab-name'],
@@ -31,6 +37,7 @@ export default Marionette.View.extend({
       clientCode: sample.get('client-code') && StringHelp.limit(sample.get('client-code')),
       locks: attrLocks,
       errors: attrErrors,
+      titles: attrTitles,
     };
   },
 });
