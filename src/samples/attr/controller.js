@@ -112,7 +112,6 @@ const API = {
 
     let currentVal;
     let newVal;
-    const occ = sample.getOccurrence();
 
     switch (attr) {
       case 'date':
