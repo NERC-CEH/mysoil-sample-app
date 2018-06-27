@@ -33,33 +33,69 @@
     Location
   </li>
 
-  <li class="table-view-cell">
-    <span class="media-object pull-right descript"><%- obj.country %></span>
-    Country
-  </li>
+  <% if (obj['country']) { %>
+    <li class="table-view-cell">
+      <span class="media-object pull-right descript"><%- obj.country %></span>
+      Country
+    </li>
+  <% } %>
 
   <li class="table-view-cell">
-    <span class="media-object pull-right descript"><%- obj['depth'] %></span>
-    <span class="media-object pull-right descript"><%- obj['sample-type'] %></span>
-    <span class="media-object pull-right descript"><%- obj['soil-type'] %></span>
-    <span class="media-object pull-right descript"><%- obj['calcareous'] %></span>
-    <span class="media-object pull-right descript"><%- obj['structure-score'] %></span>
-    <span class="media-object pull-right descript"><%- obj['structure-notes'] %></span>
-    <span class="media-object pull-right descript"><%- obj['land-use'] %></span>
-    <span class="media-object pull-right descript"><%- obj['sample-notes'] %></span>
+    <% if (obj['depth']) { %>
+      <span class="media-object pull-right descript"><%- obj['depth'] %></span>
+    <% } %>
+    <% if (obj['sample-type']) { %>
+      <span class="media-object pull-right descript"><%- obj['sample-type'] %></span>
+    <% } %>
+    <% if (obj['soil-type']) { %>
+      <span class="media-object pull-right descript"><%- obj['soil-type'] %></span>
+    <% } %>
+    <% if (obj['calcareous']) { %>
+      <span class="media-object pull-right descript"><%- obj['calcareous'] %></span>
+    <% } %>
+    <% if (obj['structure-score']) { %>
+      <span class="media-object pull-right descript"><%- obj['structure-score'] %></span>
+    <% } %>
+    <% if (obj['structure-notes']) { %>
+      <span class="media-object pull-right descript"><%- obj['structure-notes'] %></span>
+    <% } %>
+    <% if (obj['land-use']) { %>
+      <span class="media-object pull-right descript"><%- obj['land-use'] %></span>
+    <% } %>
+    <% if (obj['sample-notes']) { %>
+      <span class="media-object pull-right descript"><%- obj['sample-notes'] %></span>
+    <% } %>
     Soil data
   </li>
 
   <li class="table-view-cell">
-    <span class="media-object pull-right descript"><%- obj['field-name'] %></span>
-    <span class="media-object pull-right descript"><%- obj['field-size'] %></span>
-    <span class="media-object pull-right descript"><%- obj['crop-present'] %></span>
-    <span class="media-object pull-right descript"><%- obj['crop-future'] %></span>
-    <span class="media-object pull-right descript"><%- obj['straw'] %></span>
-    <span class="media-object pull-right descript"><%- obj['manure'] %></span>
-    <span class="media-object pull-right descript"><%- obj['tillage'] %></span>
-    <span class="media-object pull-right descript"><%- obj['habitat'] %></span>
-    <span class="media-object pull-right descript"><%- obj['field-notes'] %></span>
+    <% if (obj['field-name']) { %>
+      <span class="media-object pull-right descript"><%- obj['field-name'] %></span>
+    <% } %>
+    <% if (obj['field-size']) { %>
+      <span class="media-object pull-right descript"><%- obj['field-size'] %></span>
+    <% } %>
+    <% if (obj['crop-present']) { %>
+      <span class="media-object pull-right descript"><%- obj['crop-present'] %></span>
+    <% } %>
+    <% if (obj['crop-future']) { %>
+      <span class="media-object pull-right descript"><%- obj['crop-future'] %></span>
+    <% } %>
+    <% if (obj['straw']) { %>
+      <span class="media-object pull-right descript"><%- obj['straw'] %></span>
+    <% } %>
+    <% if (obj['manure']) { %>
+      <span class="media-object pull-right descript"><%- obj['manure'] %></span>
+    <% } %>
+    <% if (obj['tillage']) { %>
+      <span class="media-object pull-right descript"><%- obj['tillage'] %></span>
+    <% } %>
+    <% if (obj['habitat']) { %>
+      <span class="media-object pull-right descript"><%- obj['habitat'] %></span>
+    <% } %>
+    <% if (obj['field-notes']) { %>
+      <span class="media-object pull-right descript"><%- obj['field-notes'] %></span>
+    <% } %>
     Site data
   </li>
   
