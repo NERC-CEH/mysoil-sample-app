@@ -9,12 +9,9 @@ import JST from 'JST';
 export default Marionette.View.extend({
   template: JST['common/radio'],
 
-  triggers: {
-    'click input[type="radio"]': 'save',
-  },
-
   events: {
-    'click a': 'toggleSection'
+    'click a': 'toggleSection',
+    'click input[type="radio"]': 'save',
   },
 
 
@@ -115,5 +112,16 @@ export default Marionette.View.extend({
       const $main = $('#main');
       $main.scrollTop($main.scrollTop() + $section.offset().top - 94);
     }
+  },
+
+  save(e) {
+    let $radio = $(e.target);
+    if ($radio.val() === this.options.default) {
+      // The user clicked the currently selected option so de-select.
+      $radio.prop('checked', false);
+    }
+    // The save event is listened for by samples/attr/controller
+    this.triggerMethod('save');
   }
+
 });
