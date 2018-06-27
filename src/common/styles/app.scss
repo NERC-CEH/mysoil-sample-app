@@ -791,6 +791,8 @@ header .pull-right {
 // Sectioned list of radio inputs.
 .radio-section-head {
   padding: 0;
+  background-color: $color-gray-light;
+  border-bottom: 2px solid $color-gray;
   .navigate-right {
     display: block;
     padding: 16px;
