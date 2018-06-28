@@ -249,7 +249,7 @@ const config = {
       id: 34,
       values: {
         'CEH': 229,
-        'NRM': 230,
+        // 'NRM': 230,
         'Other':271,
       },
     },
@@ -334,14 +334,14 @@ const config = {
     }
 
     // lab name required
-    if (!attrs['lab-name']) {
-      attributes['lab-name'] = 'Missing';
-}
+    // if (!attrs['lab-name']) {
+    //   attributes['lab-name'] = 'Missing';
+    // }
 
     // client code required
-    if (!attrs['client-code']) {
-      attributes['client-code'] = 'Missing';
-    }
+    // if (!attrs['client-code']) {
+    //   attributes['client-code'] = 'Missing';
+    // }
 
     return [attributes, null, null];
   },
