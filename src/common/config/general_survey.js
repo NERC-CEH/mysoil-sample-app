@@ -103,10 +103,10 @@ const config = {
     'calcareous': {
       title: 'Calcareous soil',
       label: 'Select whether your soil is on chalk or limestone.',
-      id: 45,
+      id: 60,
       values: {
-        'Yes': 't',
-        'No': 'f',
+        'Yes': 299,
+        'No': 300,
       },
     },
 
@@ -178,20 +178,20 @@ const config = {
     'straw': {
       title: 'Straw',
       label: 'Select whether straw has been removed.',
-      id: 32,
+      id: 61,
       values: {
-        'Removed': 't',
-        'Not removed': 'f',
+        'Removed': 299,
+        'Not removed': 300,
       },
     },
 
     'manure': {
       title: 'Organic fertiliser',
       label: 'Select whether organic fertiliser has been added (includes farmyard manure, slurry, sewage sludge, compost).',
-      id: 33,
+      id: 62,
       values: {
-        'Added': 't',
-        'Not added': 'f',
+        'Added': 299,
+        'Not added': 300,
       },
     },
 
