@@ -249,7 +249,7 @@ const config = {
       id: 34,
       values: {
         'CEH': 229,
-        // 'NRM': 230,
+        'NRM': 230,
         'Other':271,
       },
     },
