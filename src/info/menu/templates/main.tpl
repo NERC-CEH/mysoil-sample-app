@@ -42,6 +42,12 @@
   </a>
 </li>
 <li class="table-view-cell">
+  <a href="#info/terms" class="navigate-right">
+    <span class="media-object pull-left icon icon-list"></span>
+    Terms and Conditions
+  </a>
+</li>
+<li class="table-view-cell">
   <a href="#info/privacy" class="navigate-right">
     <span class="media-object pull-left icon icon-lock-closed"></span>
     Privacy Policy

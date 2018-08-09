@@ -23,7 +23,7 @@
 
 
 <div class="table-view-cell input-row">
-  I agree to Terms and Conditions
+  I agree to <a href="#info/terms" class="inline">Terms and Conditions</a>
   <div id="user-terms-agree" class="toggle no-yes">
     <div class="toggle-handle"></div>
   </div>

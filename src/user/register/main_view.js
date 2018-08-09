@@ -7,6 +7,8 @@ import Device from 'helpers/device';
 import Validate from 'helpers/validate';
 import JST from 'JST';
 
+import './styles.scss';
+
 export default Marionette.View.extend({
   template: JST['user/register/main'],
 

@@ -41,6 +41,11 @@ const Router = Marionette.AppRouter.extend({
         }),
       });
     },
+    'info/terms(/)': () => {
+      CommonController.show({
+        title: 'Terms & Conditions', App, route: 'info/terms/main',
+      });
+    },
     'info/privacy(/)': () => {
       CommonController.show({
         title: 'Privacy Policy', App, route: 'info/privacy/main',
