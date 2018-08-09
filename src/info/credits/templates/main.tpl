@@ -25,5 +25,12 @@
       This app has been funded by the
       <a href="https://www.nerc.ac.uk/">Natural Environment Research Council</a>.
     </p>
+    <p><strong>Welcome screen credits:</strong></p>
+    <ul style="list-style-type: none;">
+      <li>David Kitching</li>
+      <li>Nadine Mitschunas</li>
+      <li>UK Ladybird Survey</li>
+    </ul>
+       
   </li>
 </ul>
