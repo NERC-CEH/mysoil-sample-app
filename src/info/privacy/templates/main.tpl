@@ -51,7 +51,7 @@
 
     <p>All of your personal data that we collect will be stored securely on a database 
       for as long as you are signed up with iRecord Soil. If you no longer wish to be 
-      registered with iRecord Soil, please contact irecord@ceh.ac.uk to let us know. 
+      registered with iRecord Soil, please contact enquiries@ceh.ac.uk to let us know. 
       The component of your personal data that forms part of the soil record (i.e. your 
       name as a recorder, and the location and time of the record) will be kept 
       permanently as part of the scientific dataset.</p>
@@ -67,7 +67,7 @@
 
     <p>You are entitled to access any of your personal data that we hold. You can view 
       the personal data we hold of yours by logging in to your account on the iRecord 
-      Soil website. Alternatively please contact irecord@ceh.ac.uk with as much detail 
+      Soil website. Alternatively please contact enquiries@ceh.ac.uk with as much detail 
       as possible on the information you would like us to provide and we will respond 
       within one month</p>
     <p>You have the right to object to the processing of your personal data where we have 
@@ -75,7 +75,7 @@
       request that we restrict or stop processing, rectify or delete your personal data. 
       Where the personal data we hold has not been supplied by yourself, you are entitled 
       to ask how we obtained the personal data. You can request that your iRecord Soil 
-      user account is cancelled at any time by emailing irecord@ceh.ac.uk</p>
+      user account is cancelled at any time by emailing enquiries@ceh.ac.uk</p>
     <p>Please contact Mark Hinder - UKRI NERC (mark@nerc.ac.uk) if you wish to progress 
       any of these rights.</p>
     <p>If you have any concerns about how your personal data is being used, we will try 

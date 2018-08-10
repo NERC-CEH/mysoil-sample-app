@@ -34,7 +34,7 @@
     <p>If you do not agree, please do not use iRecord Soil.  Do not use iRecord Soil if you are 
       under 13 years of age.</p>
     <p>You can request that your iRecord Soil account is cancelled at any time by emailing 
-      irecord@ceh.ac.uk.  Any records you have submitted will be preserved as part of a long 
+      enquiries@ceh.ac.uk.  Any records you have submitted will be preserved as part of a long 
       term scientific data set which will continue to contribute to our research and 
       understanding, and be stored indefinitely. This includes the details of soil sample 
       records you have submitted, the analytical information associated with them, and 
@@ -136,9 +136,7 @@
       at <a href="https://soil.irecord.org.uk/terms">https://soil.irecord.org.uk/terms</a>. If 
       changes are made to these terms in the future, a prominent notice will be posted on the 
       website.</p>
-  </li>  
-      
-    
+  </li>
     
     
     
