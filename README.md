@@ -1,6 +1,6 @@
-# mysoil-sample-app
+# iRecord Land App
 
-This app started as a clone of the [iRecord App](https://github.com/NERC-CEH/irecord-app) v2.0.0. The build instructions are the same, copied.
+This app started as a clone of the [iRecord App](https://github.com/NERC-CEH/irecord-app) v2.0.0. The build instructions are the same, copied. Initially named mySoil Sample with domain https://mysolisample.org, it has been changed to iRecord Soil at https://soil.irecord.org.uk.
 
 ## Configuration
 
