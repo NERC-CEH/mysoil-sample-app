@@ -1,6 +1,6 @@
 <ul class="table-view">
   <li>
-    <p>iRecordSoil App is an application that enables you to get involved in soil recording. 
+    <p>iRecord Soil is an application that enables you to get involved in soil recording. 
       You can contribute your sightings with photos, GPS acquired coordinates, descriptions 
       and other information, thus providing you with an online digital record of the soil 
       health on your land. In addition, by contributing to the service you enable researchers 
