@@ -85,5 +85,5 @@ npm run build:cordova:update
 npm run build:cordova:android
 ```
 
-- **iOS build** open `dist/cordova/platforms/ios/iRecord App.xcodeproj` in XCode
+- **iOS build** open `dist/cordova/platforms/ios/iRecord Soil App.xcodeproj` in XCode
 
