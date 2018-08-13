@@ -12,8 +12,7 @@ module.exports = webpackMerge(commonConfig, {
   devtool: 'source-map',
 
   plugins: [
-    new webpack.NoErrorsPlugin(),
-    new webpack.optimize.DedupePlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
     new webpack.optimize.UglifyJsPlugin({
       cacheFolder: path.resolve(__dirname, 'dist/_build/.cached_uglify/'),
       minimize: true,
