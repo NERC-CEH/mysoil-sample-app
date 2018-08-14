@@ -79,11 +79,17 @@ npm run build:cordova
 npm run build:cordova:update
 ```
 
-- **Android build**:
+#### Android build
 
 ```bash
 npm run build:cordova:android
 ```
+The build requires an environment variable (single quoted) to locate the android keystore
+```bash
+KEYSTORE='/Path/to/android.keystore'
+```
 
-- **iOS build** open `dist/cordova/platforms/ios/iRecord Soil App.xcodeproj` in XCode
+#### iOS build
+
+- open `dist/cordova/platforms/ios/iRecord Soil App.xcodeproj` in XCode
 
