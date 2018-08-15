@@ -50,7 +50,6 @@ module.exports = (grunt) => {
 
       'exec:cordova_clean_www',
       'exec:cordova_copy_dist',
-      // 'cordova:_prepAndroid', // !!!!! use this to switch between android and ios
       'replace:cordova_config',
       'replace:cordova_build',
       'exec:cordova_add_platforms',
@@ -61,7 +60,6 @@ module.exports = (grunt) => {
      * Updates cordova project - use after tinkering with src or congig
      */
     'cordova:update': [
-      // update www
       'exec:cordova_clean_www',
       'exec:cordova_copy_dist',
       'replace:cordova_config',
@@ -78,17 +76,10 @@ module.exports = (grunt) => {
 
     'cordova:android': [
       'prompt:keystore',
-      // new
       'cordova:_prepAndroid',
       'replace:cordova_config',
       'replace:cordova_build',
       'exec:cordova_android_build',
-
-      // old
-      'cordova:_prepAndroidOld',
-      'replace:cordova_config',
-      'replace:cordova_build',
-      'exec:cordova_android_build_old',
     ],
 
 
@@ -97,10 +88,6 @@ module.exports = (grunt) => {
      */
     'cordova:_prepAndroid': () => {
       grunt.option('android', true);
-    },
-    'cordova:_prepAndroidOld': () => {
-      grunt.option('android', true);
-      grunt.option('oldversion', true);
     },
   };
 };
