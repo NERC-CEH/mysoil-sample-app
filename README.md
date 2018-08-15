@@ -81,6 +81,8 @@ npm run build:cordova:update
 
 #### Android build
 
+- Generate signed apk files.
+
 ```bash
 npm run build:cordova:android
 ```
@@ -88,6 +90,7 @@ The build requires an environment variable (single quoted) to locate the android
 ```bash
 KEYSTORE='/Path/to/android.keystore'
 ```
+- Copy `android-armv7.apk` and `android-x86.apk` from `dist/cordova/dist` to the Google Play store.
 
 #### iOS build
 
