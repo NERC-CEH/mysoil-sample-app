@@ -6,9 +6,9 @@
   <li>
     <p><strong>1. Who we are</strong></p>
 
-    <p>iRecord Soil is a website for recording georeferenced soil information. It is run 
-      and funded by the Centre for Ecology and Hydrology (CEH) within the work programme 
-      of the Soils and Land Use team.</p>
+    <p>iRecord Soil is an app and website for recording georeferenced soil information. 
+      It is run and funded by the Centre for Ecology and Hydrology (CEH) within the work
+      programme of the Soils and Land Use team.</p>
     <p>CEH is a wholly owned research centre of the Natural Environment Research Council, 
       now part of UK Research and Innovation.</p>
     <p>CEH is the controllers for all processing of personal data for the purposes of 
