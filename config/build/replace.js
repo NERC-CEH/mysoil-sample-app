@@ -108,9 +108,6 @@ module.exports = (grunt) => {
           from: /\{ANDROID_BUNDLE_VER\}/g,
           to() {
             let version = pkg.version.replace(/\./g, '') + pkg.build;
-            if (!grunt.option('oldversion')) {
-              version += 8;
-            }
             return version;
           },
         },

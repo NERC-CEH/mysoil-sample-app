@@ -57,7 +57,8 @@ module.exports = (grunt) => {
 
 
     /**
-     * Updates cordova project - use after tinkering with src or congig
+     * Updates cordova project - use after tinkering with src or config
+     * but 'npm run build' to recompile first.
      */
     'cordova:update': [
       'exec:cordova_clean_www',

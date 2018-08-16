@@ -4,7 +4,7 @@
   "title": "iRecord Soil App",
   "description": "Mobile application for data collection when taking soil samples.",
   "version": "1.0.0",
-  "build": "1",
+  "build": "2",
   "homepage": "https://soil.irecord.org.uk",
   "author": {
     "name": "Jim Bacon",
