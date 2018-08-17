@@ -1,10 +1,10 @@
 {
-  "name": "irecord-soil-app",
-  "id": "uk.ac.ceh.irs",
-  "title": "iRecord Soil App",
+  "name": "irecord-soil",
+  "id": "uk.org.irecord.soil",
+  "title": "iRecord Soil",
   "description": "Mobile application for data collection when taking soil samples.",
   "version": "1.0.0",
-  "build": "2",
+  "build": "4",
   "homepage": "https://soil.irecord.org.uk",
   "author": {
     "name": "Jim Bacon",
