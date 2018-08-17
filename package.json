@@ -1,6 +1,6 @@
 {
   "name": "irecord-soil",
-  "id": "uk.org.irecord.soil",
+  "id": "uk.ac.ceh.irs",
   "title": "iRecord Soil",
   "description": "Mobile application for data collection when taking soil samples.",
   "version": "1.0.0",
