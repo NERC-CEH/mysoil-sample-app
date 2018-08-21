@@ -19,7 +19,29 @@ export default Marionette.View.extend({
     // Get the app id for the appropriate platform.
     let appId;
     if (Device.isMobile() && Device.isIOS()) {
-      appId = appName;
+      switch (appName) {
+        case 'soilinfo':
+          appId = 'soilinfo/id895057724?mt=8';
+          break;
+        case 'mysoil':
+          appId = 'mysoil/id529131863?mt=8';
+          break;
+        case 'soilscapes':
+          appId = 'soilscapes/id979537925?mt=8';
+          break;
+        case 'crapapp':
+          appId = 'farm-crap-app-pro/id1218868576?mt=8';
+          break;
+        case 'landpks':
+          appId = 'landpks/id1084892005?mt=8';
+          break;
+        case 'igeology':
+          appId = 'igeology/id392258040?mt=8';
+          break;
+        default:
+          // Not present in Apple app store so do nothing.
+          return;    
+      }
     }
     else {
       switch (appName) {
@@ -48,7 +70,7 @@ export default Marionette.View.extend({
     let baseUrl;
     if (Device.isMobile()) {
       if (Device.isIOS()) {
-        baseUrl = "itms://appstore.com/apps/";
+        baseUrl = "https://itunes.apple.com/gb/app/";
       }
       else {
         baseUrl="market://details?id=";
