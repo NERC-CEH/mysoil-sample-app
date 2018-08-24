@@ -1,7 +1,7 @@
 <div class="input-group form">
   <div class="input-row">
     <label class="media-object pull-left icon icon-mail"></label>
-    <input id="user-email" type="text" placeholder="Email" name="email" >
+    <input id="user-email" type="email" placeholder="Email" name="email" >
   </div>
   <div class="input-row">
     <label class="media-object pull-left icon icon-user"></label>
