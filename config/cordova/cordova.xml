@@ -3,7 +3,8 @@
         android-versionCode="2026{ANDROID_BUNDLE_VER}8"
         ios-CFBundleVersion="{BUNDLE_VER}"
         xmlns="http://www.w3.org/ns/widgets"
-        xmlns:cdv="http://cordova.apache.org/ns/1.0">
+        xmlns:cdv="http://cordova.apache.org/ns/1.0"
+        xmlns:android="schemas.android.com/apk/res/android">
 
     <name>{APP_TITLE}</name>
     <description>{APP_DESCRIPTION}</description>
@@ -12,6 +13,9 @@
     </author>
 
     <content src="index.html" />
+
+    <engine name="android" spec="6.3.0" />
+    <engine name="ios" spec="4.5.5" />
 
     <plugin name="cordova-plugin-datepicker" spec="~0.9.3" />
     <plugin name="cordova-plugin-keyboard" spec="~1.1.5" />
@@ -26,16 +30,7 @@
     <plugin name="cordova-plugin-google-analytics" spec="~0.8.1" />
     <plugin name="cordova-sqlite-storage" spec="~2.0.2" />
     <plugin name="cordova-plugin-camera" spec="~2.4.1" />
-
-    <edit-config target="NSCameraUsageDescription" file="*-Info.plist" mode="merge">
-        <string>To access your camera when attaching images to records</string>
-    </edit-config>
-    <edit-config target="NSPhotoLibraryUsageDescription" file="*-Info.plist" mode="merge">
-        <string>To access your photo library when attaching images to records</string>
-    </edit-config>
-    <edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
-        <string>To access your GPS when automatically attaching locations to records</string>
-    </edit-config>
+    <plugin name="cordova-custom-config" spec="^5.0.2" />
 
     <access origin="*" />
     <allow-intent href="http://*/*" />
@@ -77,6 +72,16 @@
     </platform>
     
     <platform name="ios">
+        <edit-config target="NSCameraUsageDescription" file="*-Info.plist" mode="merge">
+            <string>To access your camera when attaching images to records</string>
+        </edit-config>
+        <edit-config target="NSPhotoLibraryUsageDescription" file="*-Info.plist" mode="merge">
+            <string>To access your photo library when attaching images to records</string>
+        </edit-config>
+        <edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
+            <string>To access your GPS when automatically attaching locations to records</string>
+        </edit-config>
+
         <!-- iOS 8.0+ -->
         <!-- iPhone 6 Plus  -->
         <icon src="../../config/cordova/images/ios/icon/icon-60@3x.png" width="180" height="180" />
@@ -125,12 +130,33 @@
     </platform>
 
     <platform name="android">
-      	<icon src="../../config/cordova/images/android/icon/drawable-ldpi-icon.png" qualifier="ldpi" />
-        <icon src="../../config/cordova/images/android/icon/drawable-mdpi-icon.png" density="mdpi" />
-        <icon src="../../config/cordova/images/android/icon/drawable-hdpi-icon.png" density="hdpi" />
-        <icon src="../../config/cordova/images/android/icon/drawable-xhdpi-icon.png" density="xhdpi" />
-        <icon src="../../config/cordova/images/android/icon/drawable-xxhdpi-icon.png" density="xxhdpi" />
-        <icon src="../../config/cordova/images/android/icon/drawable-xxxhdpi-icon.png" density="xxxhdpi" />
+        <custom-preference name="android-manifest/application/@android:icon" value="@mipmap/ic_launcher" />
+        <custom-preference name="android-manifest/application/@android:roundIcon" value="@mipmap/ic_launcher_round" />
+
+        <resource-file src="../../config/cordova/images/android/icon/drawable/ic_launcher_background.png" target="res/drawable/ic_launcher_background.png" />
+        <resource-file src="../../config/cordova/images/android/icon/drawable-v24/ic_launcher_foreground.png" target="res/drawable-v24/ic_launcher_foreground.png" />
+        <resource-file src="../../config/cordova/images/android/icon/mipmap-anydpi-v26/ic_launcher.xml" target="res/mipmap-anydpi-v26/ic_launcher.xml" />
+        <resource-file src="../../config/cordova/images/android/icon/mipmap-anydpi-v26/ic_launcher_round.xml" target="res/mipmap-anydpi-v26/ic_launcher_round.xml" />
+        <resource-file src="../../config/cordova/images/android/icon/mipmap-hdpi/ic_launcher.png" target="res/mipmap-hdpi/ic_launcher.png" />
+        <resource-file src="../../config/cordova/images/android/icon/mipmap-hdpi/ic_launcher_foreground.png" target="res/mipmap-hdpi/ic_launcher_foreground.png" />
+        <resource-file src="../../config/cordova/images/android/icon/mipmap-hdpi/ic_launcher_background.png" target="res/mipmap-hdpi/ic_launcher_background.png" />
+        <resource-file src="../../config/cordova/images/android/icon/mipmap-hdpi/ic_launcher_round.png" target="res/mipmap-hdpi/ic_launcher_round.png" />
+        <resource-file src="../../config/cordova/images/android/icon/mipmap-mdpi/ic_launcher.png" target="res/mipmap-mdpi/ic_launcher.png" />
+        <resource-file src="../../config/cordova/images/android/icon/mipmap-mdpi/ic_launcher_foreground.png" target="res/mipmap-mdpi/ic_launcher_foreground.png" />
+        <resource-file src="../../config/cordova/images/android/icon/mipmap-mdpi/ic_launcher_background.png" target="res/mipmap-mdpi/ic_launcher_background.png" />
+        <resource-file src="../../config/cordova/images/android/icon/mipmap-mdpi/ic_launcher_round.png" target="res/mipmap-mdpi/ic_launcher_round.png" />
+        <resource-file src="../../config/cordova/images/android/icon/mipmap-xhdpi/ic_launcher.png" target="res/mipmap-xhdpi/ic_launcher.png" />
+        <resource-file src="../../config/cordova/images/android/icon/mipmap-xhdpi/ic_launcher_foreground.png" target="res/mipmap-xhdpi/ic_launcher_foreground.png" />
+        <resource-file src="../../config/cordova/images/android/icon/mipmap-xhdpi/ic_launcher_background.png" target="res/mipmap-xhdpi/ic_launcher_background.png" />
+        <resource-file src="../../config/cordova/images/android/icon/mipmap-xhdpi/ic_launcher_round.png" target="res/mipmap-xhdpi/ic_launcher_round.png" />
+        <resource-file src="../../config/cordova/images/android/icon/mipmap-xxhdpi/ic_launcher.png" target="res/mipmap-xxhdpi/ic_launcher.png" />
+        <resource-file src="../../config/cordova/images/android/icon/mipmap-xxhdpi/ic_launcher_foreground.png" target="res/mipmap-xxhdpi/ic_launcher_foreground.png" />
+        <resource-file src="../../config/cordova/images/android/icon/mipmap-xxhdpi/ic_launcher_background.png" target="res/mipmap-xxhdpi/ic_launcher_background.png" />
+        <resource-file src="../../config/cordova/images/android/icon/mipmap-xxhdpi/ic_launcher_round.png" target="res/mipmap-xxhdpi/ic_launcher_round.png" />
+        <resource-file src="../../config/cordova/images/android/icon/mipmap-xxxhdpi/ic_launcher.png" target="res/mipmap-xxxhdpi/ic_launcher.png" />
+        <resource-file src="../../config/cordova/images/android/icon/mipmap-xxxhdpi/ic_launcher_foreground.png" target="res/mipmap-xxxhdpi/ic_launcher_foreground.png" />
+        <resource-file src="../../config/cordova/images/android/icon/mipmap-xxxhdpi/ic_launcher_background.png" target="res/mipmap-xxxhdpi/ic_launcher_background.png" />
+        <resource-file src="../../config/cordova/images/android/icon/mipmap-xxxhdpi/ic_launcher_round.png" target="res/mipmap-xxxhdpi/ic_launcher_round.png" />
 
         <splash src="../../config/cordova/images/android/splash/drawable-land-ldpi-screen.png" density="land-ldpi"/>
         <splash src="../../config/cordova/images/android/splash/drawable-land-mdpi-screen.png" density="land-mdpi"/>
