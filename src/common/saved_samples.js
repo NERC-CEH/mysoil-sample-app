@@ -33,19 +33,21 @@ const Collection = Indicia.Collection.extend({
       toWait.push(validPromise);
     });
     return Promise.all(toWait)
-      .then(() => {
-        const toWaitSend = [];
-        that.models.forEach((sample) => {
-          const validPromise = sample.save(null, { remote: true });
-          if (!validPromise) {
-            return;
-          }
-          toWaitSend.push(validPromise);
-        });
-        // return Promise.all(toWaitSend);
-        // no promise return since we don't want wait till all are submitted
-        // as this can be done in the background
-      });
+  },
+
+  sendAllSetToSend() {
+    Log('SavedSamples: sending all samples set to send.');
+
+    this.models.forEach((sample) => {
+      const validPromise = sample.save(null, { remote: true });
+      if (!validPromise) {
+        return;
+      }
+      // Return resolved promise since we don't want wait till all are submitted
+      // as this can be done in the background.
+      return Promise.resolve(true);
+    });
+
   },
 
   /**

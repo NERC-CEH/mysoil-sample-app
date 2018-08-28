@@ -4,6 +4,7 @@
 import Backbone from 'backbone';
 import radio from 'radio';
 import Log from 'helpers/log';
+import Device from 'helpers/device';
 import Analytics from 'helpers/analytics';
 import appModel from 'app_model';
 import userModel from 'user_model';
@@ -123,6 +124,23 @@ const API = {
           onClick() {
             Log('Settings:Menu:Controller: sending all samples.');
             savedSamples.setAllToSend()
+              .then (() => {
+                // should we sync?
+                if (!Device.isOnline()) {
+                  radio.trigger('app:dialog:error', {
+                    message: 'Looks like you are offline!',
+                  });
+                  return;
+                }
+
+                if (!userModel.hasLogIn()) {
+                  radio.trigger('user:login', { replace: true });
+                  return;
+                }
+
+                // sync
+                savedSamples.sendAllSetToSend();
+              })
               .then(() => {
                 radio.trigger('app:dialog', {
                   title: 'Done!',
