@@ -50,7 +50,7 @@ import Log from './log';
 
 const API = {
   GPS_ACCURACY_LIMIT: 100, // meters
-  TIMEOUT: 30000,
+  TIMEOUT: 120000,
 
   running: false,
 
