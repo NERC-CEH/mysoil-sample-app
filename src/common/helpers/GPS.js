@@ -49,7 +49,7 @@ import Log from './log';
 //
 
 const API = {
-  GPS_ACCURACY_LIMIT: 100, // meters
+  GPS_ACCURACY_LIMIT: 50, // meters
   TIMEOUT: 120000,
 
   running: false,
@@ -99,6 +99,7 @@ const API = {
     };
 
     const watchID = navigator.geolocation.watchPosition(onSuccess, onError, GPSoptions);
+    Log(`GPS: watch - ${watchID}`);
     return watchID;
   },
 
@@ -109,6 +110,7 @@ const API = {
     }
 
     navigator.geolocation.clearWatch(id);
+    Log(`GPS: clearWatch - ${id}`);
   },
 };
 

@@ -76,7 +76,8 @@ const extension = {
       },
     };
 
-    this.locating = GPS.start(options);
+    this.watchId = GPS.start(options);
+    this.locating = true;
     this.trigger('geolocation');
     this.trigger('geolocation:start');
   },
@@ -84,7 +85,7 @@ const extension = {
   stopGPS(options = {}) {
     Log('SampleModel:GPS: stop.');
 
-    GPS.stop(this.locating);
+    GPS.stop(this.watchId);
     delete this.locating;
 
     if (!options.silent) {
