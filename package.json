@@ -3,8 +3,8 @@
   "id": "uk.ac.ceh.irs",
   "title": "iRecord Soil",
   "description": "Mobile application for data collection when taking soil samples.",
-  "version": "1.0.0",
-  "build": "11",
+  "version": "1.0.1",
+  "build": "0",
   "homepage": "https://soil.irecord.org.uk",
   "author": {
     "name": "Jim Bacon",
