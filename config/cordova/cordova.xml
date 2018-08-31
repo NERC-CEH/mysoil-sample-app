@@ -74,6 +74,9 @@
         <custom-config-file platform="ios" target="*-Info.plist" parent="NSCameraUsageDescription" >
             <string>To access your camera when attaching images to records</string>
         </custom-config-file>
+        <custom-config-file platform="ios" target="*-Info.plist" parent="NSPhotoLibraryAddUsageDescription" >
+            <string>To save images when attaching to records</string>
+        </custom-config-file>
         <custom-config-file platform="ios" target="*-Info.plist" parent="NSPhotoLibraryUsageDescription" >
             <string>To access your photo library when attaching images to records</string>
         </custom-config-file>
